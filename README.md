@@ -10,9 +10,9 @@
 ![High Availability](https://img.shields.io/badge/High%20Availability-99.9%25-success)
 
 **Intelligent AI Model Load Balancing for OpenClaw**  
-**智能故障转移 · 性能优化 · 成本控制**
+**Smart Failover · Performance Optimization · Cost Control**
 
-[🚀 Quick Start](#-quick-start) | [✨ Features](#-features) | [📊 Demo](#-demo) | [🔧 Installation](#-installation) | [📖 Documentation](#-documentation)
+[🚀 Quick Start](#-quick-start) | [✨ Features](#-features) | [📊 Demo](#-demo) | [🔧 Installation](#-installation) | [📖 Documentation](#-documentation) | [中文文档](README_CN.md)
 
 </div>
 
@@ -104,6 +104,8 @@ Visit our live demo at: [Coming Soon]
 
 #### AI Optimization Results
 ![AI Optimization](https://via.placeholder.com/800x400/00C853/FFFFFF?text=AI+Optimization+Results)
+
+> **Note**: These are placeholder images. Actual screenshots will be added after deployment.
 
 ## 🔧 Installation
 
