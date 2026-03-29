@@ -70,17 +70,37 @@
 - 已安装并运行 OpenClaw
 
 ### 安装部署
+
+#### 作为 OpenClaw 技能安装（推荐）
+```bash
+# 1. 确保 OpenClaw 已安装并运行
+openclaw status
+
+# 2. 将项目复制到 OpenClaw 技能目录
+cp -r /Users/a404/.openclaw/workspace/skills/model-auto-switch ~/.openclaw/skills/
+
+# 3. 重启 OpenClaw 加载新技能
+openclaw gateway restart
+
+# 4. 启动管理后台
+cd ~/.openclaw/skills/model-auto-switch
+./tools/start_all.sh
+```
+
+#### 独立安装
 ```bash
 # 克隆仓库
 git clone https://github.com/linux503/openclaw-model-balancer.git
 cd openclaw-model-balancer
 
-# 安装依赖
+# 安装 Python 依赖
 pip install -r requirements.txt
-npm install --prefix admin
+
+# 安装 Node.js 依赖（管理后台）
+cd admin && npm install
 
 # 启动系统
-./tools/start_all.sh
+cd .. && ./tools/start_all.sh
 ```
 
 ### 访问管理界面

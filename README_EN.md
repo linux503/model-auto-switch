@@ -70,17 +70,37 @@
 - OpenClaw installed and running
 
 ### Installation
+
+#### Install as OpenClaw Skill (Recommended)
+```bash
+# 1. Ensure OpenClaw is installed and running
+openclaw status
+
+# 2. Copy project to OpenClaw skills directory
+cp -r /Users/a404/.openclaw/workspace/skills/model-auto-switch ~/.openclaw/skills/
+
+# 3. Restart OpenClaw to load the new skill
+openclaw gateway restart
+
+# 4. Start the management backend
+cd ~/.openclaw/skills/model-auto-switch
+./tools/start_all.sh
+```
+
+#### Standalone Installation
 ```bash
 # Clone the repository
 git clone https://github.com/linux503/openclaw-model-balancer.git
 cd openclaw-model-balancer
 
-# Install dependencies
+# Install Python dependencies
 pip install -r requirements.txt
-npm install --prefix admin
+
+# Install Node.js dependencies (Admin backend)
+cd admin && npm install
 
 # Start the system
-./tools/start_all.sh
+cd .. && ./tools/start_all.sh
 ```
 
 ### Access the Dashboard

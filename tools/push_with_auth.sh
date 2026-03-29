@@ -2,7 +2,7 @@
 echo "🚀 GitHub 代码推送 - 认证助手"
 echo "=========================================="
 
-cd /Users/a404/.openclaw/workspace/skills/openclaw-model-balancer
+cd /Users/a404/.openclaw/workspace/skills/model-auto-switch
 
 echo "📊 当前状态:"
 echo "  仓库: https://github.com/linux503/openclaw-model-balancer"

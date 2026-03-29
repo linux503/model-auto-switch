@@ -247,7 +247,7 @@ echo "   访问: http://127.0.0.1:8090/skills/openclaw-model-balancer/scripts/mo
 echo ""
 echo "3. 配置定时任务:"
 echo "   crontab -e"
-echo "   添加: */5 * * * * /Users/a404/.openclaw/workspace/skills/openclaw-model-balancer/scripts/model_auto_switch.sh"
+echo "   添加: */5 * * * * /Users/a404/.openclaw/workspace/skills/model-auto-switch/scripts/core/model_manager.py auto"
 echo ""
 echo "4. 测试完整功能:"
 echo "   python3 scripts/model_manager_enhanced.py dashboard"
