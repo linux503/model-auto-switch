@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最终验证测试</title>
+    <style>
+        body { font-family: monospace; background: #0f172a; color: #e2e8f0; padding: 20px; }
+        .test { background: #1e293b; padding: 15px; margin: 10px 0; border-radius: 8px; }
+        .success { color: #10b981; }
+        .error { color: #ef4444; }
+        button { background: #3b82f6; color: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; }
+        pre { background: #0f172a; padding: 10px; border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <h1>✅ 最终修复验证</h1>
+    
+    <div class="test">
+        <h2>1. 检查修复状态</h2>
+        <button onclick="checkFix()">运行检查</button>
+        <div id="fixResult"></div>
+    </div>
+    
+    <div class="test">
+        <h2>2. 访问管理后台</h2>
+        <button onclick="window.open('/admin', '_blank')">打开管理后台</button>
+        <p>应该能看到：</p>
+        <ul>
+            <li>✅ 总模型数: 19</li>
+            <li>✅ 活跃模型: 19</li>
+            <li>✅ 当前模型: deepseek/deepseek-chat</li>
+            <li>✅ 连接状态: 已连接</li>
+        </ul>
+    </div>
+    
+    <div class="test">
+        <h2>3. 控制台检查</h2>
+        <p>按 F12 打开开发者工具，查看控制台应该看到：</p>
+        <pre>🚀 OpenClaw 管理后台初始化...
+✅ DOM加载完成
+🔧 初始化应用...
+⚙️ 设置事件监听器...
+🔌 连接WebSocket...
+📥 加载初始数据...
+📊 加载仪表板数据...
+✅ 仪表板数据加载成功: 19 个模型
+🔄 更新仪表板...
+📈 统计信息: {totalModels: 19, activeModels: 19}
+✅ 更新 totalModels: 19
+✅ 更新 activeModels: 19
+📊 进度条更新: 100%
+✅ 更新 currentModel: deepseek/deepseek-chat
+✅ 更新 successRate: 0.0%
+✅ WebSocket连接成功
+✅ 初始化完成</pre>
+    </div>
+    
+    <script>
+        async function checkFix() {
+            const result = document.getElementById('fixResult');
+            result.innerHTML = '<div class="success">检查中...</div>';
+            
+            let html = '';
+            
+            // 检查API
+            try {
+                const res = await fetch('/api/models');
+                const data = await res.json();
+                html += `<div class="success">✅ API正常: ${data.count}个模型</div>`;
+            } catch (e) {
+                html += `<div class="error">❌ API失败: ${e.message}</div>`;
+            }
+            
+            // 检查JS文件
+            try {
+                const res = await fetch('/admin_simple.js');
+                html += `<div class="success">✅ JS文件正常: ${res.status}</div>`;
+            } catch (e) {
+                html += `<div class="error">❌ JS文件失败: ${e.message}</div>`;
+            }
+            
+            // 检查页面
+            try {
+                const res = await fetch('/admin');
+                const text = await res.text();
+                const hasJS = text.includes('admin_simple.js');
+                const hasStats = text.includes('totalModels') && text.includes('activeModels');
+                
+                html += `<div class="${hasJS ? 'success' : 'error'}">${hasJS ? '✅' : '❌'} 页面包含JS引用</div>`;
+                html += `<div class="${hasStats ? 'success' : 'error'}">${hasStats ? '✅' : '❌'} 页面包含统计元素</div>`;
+            } catch (e) {
+                html += `<div class="error">❌ 页面检查失败: ${e.message}</div>`;
+            }
+            
+            result.innerHTML = html;
+        }
+        
+        // 自动运行检查
+        window.addEventListener('load', checkFix);
+    </script>
+</body>
+</html>

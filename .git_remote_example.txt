@@ -1,0 +1,20 @@
+# GitHub 仓库配置示例
+# 请将下面的 URL 替换为你自己的 GitHub 仓库地址
+
+# 1. 首先在 GitHub 上创建一个新仓库:
+#    - 访问 https://github.com/new
+#    - 仓库名: model-auto-switch
+#    - 描述: AI 优化的自动切换模型技能
+#    - 公开/私有: 根据需求选择
+#    - 不初始化 README (因为本地已有)
+
+# 2. 添加远程仓库:
+git remote add origin https://github.com/YOUR_USERNAME/model-auto-switch.git
+
+# 3. 推送代码:
+git push -u origin main
+
+# 4. 推送标签:
+git push origin --tags
+
+# 注意: 请确保 YOUR_USERNAME 替换为你的 GitHub 用户名
