@@ -313,7 +313,7 @@ CMD ["node", "admin/server.js"]
 - **GitHub**: [yourusername/openclaw-openclaw-model-balancer](https://github.com/yourusername/openclaw-openclaw-model-balancer)
 - **Discord**: [OpenClaw社区](https://discord.gg/clawd)
 - **文档**: [https://docs.openclaw.ai](https://docs.openclaw.ai)
-- **邮箱**: support@openclaw.ai
+- **邮箱**: abbtoe@yandex.com
 
 ---
 

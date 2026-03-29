@@ -291,7 +291,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Documentation**: [Complete documentation](docs/)
 
 ### Commercial Support
-For enterprise support and consulting, contact: support@openclaw.ai
+Coming Soon: [SkillBox.lol](https://skillbox.lol/) | [Email: abbtoe@yandex.com](mailto:abbtoe@yandex.com)
 
 ## 🌟 Star History
 
