@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw 模型管理后台</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --success-color: #4cc9f0;
+            --warning-color: #f72585;
+            --danger-color: #7209b7;
+            --dark-bg: #121826;
+            --card-bg: #1e293b;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        
+        .sidebar {
+            background-color: var(--card-bg);
+            min-height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            padding: 20px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .card-header {
+            background-color: rgba(67, 97, 238, 0.1);
+            border-bottom: 1px solid #334155;
+            padding: 15px 20px;
+            border-radius: 12px 12px 0 0 !important;
+        }
+        
+        .nav-link {
+            color: var(--text-muted);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(67, 97, 238, 0.2);
+            color: var(--text-light);
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .model-card {
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .model-card:hover {
+            background-color: rgba(67, 97, 238, 0.1);
+        }
+        
+        .model-status-active {
+            color: #10b981;
+            background-color: rgba(16, 185, 129, 0.1);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        .model-status-disabled {
+            color: #ef4444;
+            background-color: rgba(239, 68, 68, 0.1);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .btn-success {
+            background-color: var(--success-color);
+            border-color: var(--success-color);
+        }
+        
+        .btn-warning {
+            background-color: var(--warning-color);
+            border-color: var(--warning-color);
+        }
+        
+        .btn-danger {
+            background-color: var(--danger-color);
+            border-color: var(--danger-color);
+        }
+        
+        .table-dark {
+            --bs-table-bg: var(--card-bg);
+            --bs-table-striped-bg: rgba(255,255,255,0.05);
+            --bs-table-hover-bg: rgba(67, 97, 238, 0.1);
+        }
+        
+        .toast {
+            background-color: var(--card-bg);
+            border: 1px solid #334155;
+        }
+        
+        .connection-status {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        
+        .connected {
+            background-color: #10b981;
+            box-shadow: 0 0 10px #10b981;
+        }
+        
+        .disconnected {
+            background-color: #ef4444;
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 侧边栏 -->
+    <div class="sidebar">
+        <div class="text-center mb-4">
+            <h3 class="text-primary">
+                <i class="bi bi-cpu"></i> OpenClaw
+            </h3>
+            <p class="text-muted small">模型自动切换管理后台</p>
+        </div>
+        
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="#" data-tab="dashboard">
+                    <i class="bi bi-speedometer2 me-2"></i> 仪表板
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-tab="models">
+                    <i class="bi bi-robot me-2"></i> 模型管理
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-tab="performance">
+                    <i class="bi bi-graph-up me-2"></i> 性能分析
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-tab="logs">
+                    <i class="bi bi-journal-text me-2"></i> 系统日志
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-tab="settings">
+                    <i class="bi bi-gear me-2"></i> 系统设置
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-tab="api">
+                    <i class="bi bi-plug me-2"></i> API 管理
+                </a>
+            </li>
+        </ul>
+        
+        <div class="mt-5 pt-4 border-top border-secondary">
+            <div class="connection-status mb-3">
+                <span class="connection-status disconnected" id="connectionStatus"></span>
+                <span id="connectionText">连接中...</span>
+            </div>
+            <div class="small text-muted">
+                <div>版本: v1.0.0</div>
+                <div id="serverTime">--:--:--</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 主内容区 -->
+    <div class="main-content">
+        <!-- 顶部导航 -->
+        <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+            <div class="container-fluid">
+                <span class="navbar-brand">
+                    <span id="currentTabTitle">仪表板</span>
+                </span>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-light btn-sm me-2" id="refreshBtn">
+                        <i class="bi bi-arrow-clockwise"></i> 刷新
+                    </button>
+                    <div class="dropdown">
+                        <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-lightning"></i> 快速操作
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#" id="runAutoSwitch">
+                                <i class="bi bi-arrow-repeat"></i> 运行自动切换
+                            </a></li>
+                            <li><a class="dropdown-item" href="#" id="testAllModels">
+                                <i class="bi bi-check-circle"></i> 测试所有模型
+                            </a></li>
+                            <li><a class="dropdown-item" href="#" id="createBackup">
+                                <i class="bi bi-save"></i> 创建备份
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="openApiDocs">
+                                <i class="bi bi-book"></i> API 文档
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- 标签页内容 -->
+        <div id="tabContent">
+            <!-- 仪表板 -->
+            <div class="tab-pane active" id="dashboardTab">
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card stat-card">
+                            <div class="stat-icon text-primary">
+                                <i class="bi bi-robot"></i>
+                            </div>
+                            <div class="stat-value" id="totalModels">--</div>
+                            <div class="text-muted">总模型数</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card stat-card">
+                            <div class="stat-icon text-success">
+                                <i class="bi bi-check-circle"></i>
+                            </div>
+                            <div class="stat-value" id="activeModels">--</div>
+                            <div class="text-muted">活跃模型</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card stat-card">
+                            <div class="stat-icon text-warning">
+                                <i class="bi bi-lightning"></i>
+                            </div>
+                            <div class="stat-value" id="currentModel">--</div>
+                            <div class="text-muted">当前模型</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card stat-card">
+                            <div class="stat-icon text-info">
+                                <i class="bi bi-graph-up"></i>
+                            </div>
+                            <div class="stat-value" id="successRate">--%</div>
+                            <div class="text-muted">整体成功率</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">
+                                    <i class="bi bi-activity me-2"></i> 实时状态
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <div id="realtimeStatus" class="p-3">
+                                    <div class="text-center py-5">
+                                        <div class="spinner-border text-primary" role="status">
+                                            <span class="visually-hidden">加载中...</span>
+                                        </div>
+                                        <p class="mt-3 text-muted">正在连接实时数据...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">
+                                    <i class="bi bi-clock-history me-2"></i> 最近操作
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <div id="recentActions" class="small">
+                                    <div class="text-center py-3 text-muted">
+                                        暂无操作记录
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card mt-4">
+                            <div class="card-header">
+                                <h5 class="mb-0">
+                                    <i class="bi bi-exclamation-triangle me-2"></i> 系统警告
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <div id="systemWarnings">
+                                    <div class="text-center py-3 text-success">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        <div class="mt-2">系统运行正常</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 模型管理 -->
+            <div class="tab-pane" id="modelsTab">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">
+                            <i class="bi bi-robot me-2"></i> 模型列表
+                        </h5>
+                        <div>
+                            <button class="btn btn-sm btn-primary me-2" id="addModelBtn">
+                                <i class="bi bi-plus-circle"></i> 添加模型
+                            </button>
+                            <button class="btn btn-sm btn-success" id="refreshModelsBtn">
+                                <i class="bi bi-arrow-clockwise"></i> 刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-dark table-hover" id="modelsTable">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>模型名称</th>
+                                        <th>Provider</th>
+                                        <th>状态</th>
+                                        <th>优先级</th>
+                                        <th>评分</th>
+                                        <th>最后使用</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="modelsTableBody">
+                                    <tr>
+                                        <td colspan="8" class="text-center py-5">
+                                            <div class="spinner-border text-primary" role="status">
+                                                <span class="visually-hidden">加载中...</span>
+                                            </div>
+                                            <p class="mt-3 text-muted">正在加载模型数据...</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 性能分析 -->
+            <div class="tab-pane" id="performanceTab">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="bi bi-graph-up me-2"></i> 性能分析报告
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="performanceContent">
+                            <div class="text-center py-5">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">加载中...</span>
+                                </div>
+                                <p class="mt-3 text-muted">正在生成性能报告...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 系统日志 -->
+            <div class="tab-pane" id="logsTab">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">
+                            <i class="bi bi-journal-text me-2"></i> 系统日志
+                        </h5>
+                        <div class="btn-group">
+                            <button class="btn btn-sm btn-outline-light" id="filterAllLogs">全部</button>
+                            <button class="btn btn-sm btn-outline-info" id="filterInfoLogs">信息</button>
+                            <button class="btn btn-sm btn-outline-warning" id="filterWarningLogs">警告</button>
+                            <button class="btn btn-sm btn-outline-danger" id="filterErrorLogs">错误</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-dark text-light border-secondary" 
+                                       id="logSearch" placeholder="搜索日志...">
+                                <button class="btn btn-outline-secondary" type="button" id="clearLogSearch">
+                                    <i class="bi bi-x-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="log-container" style="max-height: 500px; overflow-y: auto;">
+                            <pre class="text-light bg-dark p-3 rounded" id="logContent">
+正在加载日志...
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 系统设置 -->
+            <div class="tab-pane" id="settingsTab">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">
+                                    <i class="bi bi-gear me-2"></i> 自动切换设置
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="autoSwitchSettings">
+                                    <div class="mb-3">
+                                        <label class="form-label">自动切换启用</label>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" 
+                                                   id="autoSwitchEnabled" checked>
+                                            <label class="form-check-label" for="autoSwitchEnabled">
+                                                启用自动故障转移
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label class="form-label">检查间隔（分钟）</label>
+                                        <input type="range" class="form-range" min="1" max="60" 
+                                               value="5" id="checkInterval">
+                                        <div class="d-flex justify-content-between">
+                                            <small>1分钟</small>
+                                            <span id="checkIntervalValue">5分钟</span>
+                                            <small>60分钟</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label class="form-label">最大重试次数</label>
+                                        <select class="form-select bg-dark text-light border-secondary" 
+                                                id="maxRetries">
+                                            <option value="1">1次</option>
+                                            <option value="2">2次</option>
+                                            <option value="3" selected>3次</option>
+                                            <option value="5">5次</option>
+                                            <option value="10">10次</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label class="form-label">通知设置</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" 
+                                                   id="notifyOnSwitch" checked>
+                                            <label class="form-check-label" for="notifyOnSwitch">
+                                                切换时发送通知
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" 
+                                                   id="notifyOnFailure" checked>
+                                            <label class="form-check-label" for="notifyOnFailure">
+                                                故障时发送通知
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-primary w-100">
+                                        <i class="bi bi-save me-2"></i> 保存设置
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">
+                                    <i class="bi bi-shield me-2"></i> 系统维护
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-success" id="backupNowBtn">
+                                        <i class="bi bi-save me-2"></i> 立即备份
+                                    </button>
+                                    <button class="btn btn-warning" id="restoreBackupBtn">
+                                        <i class="bi bi-arrow-counterclockwise me-2"></i> 恢复备份
+                                    </button>
+                                    <button class="btn btn-info" id="clearLogsBtn">
+                                        <i class="bi bi-trash me-2"></i> 清理旧日志
+                                    </button>
+                                    <button class="btn btn-danger" id="resetStatsBtn">
+                                        <i class="bi bi-arrow-repeat me-2"></i> 重置统计
+                                    </button>
+                                </div>
+                                
+                                <div class="mt-4">
+                                    <h6>系统信息</h6>
+                                    <div class="small">
+                                        <div class="d-flex justify-content-between">
+                                            <span>工作空间:</span>
+                                            <span id="workspacePath">/Users/a404/.openclaw/workspace</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <span>技能路径:</span>
+                                            <span id="skillPath">/skills/model-auto-switch</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <span>配置文件:</span>
+                                            <span id="configPath">models_registry.json</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <span>日志文件:</span>
+                                            <span id="logPath">logs/model_switch.log</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- API 管理 -->
+            <div class="tab-pane" id="apiTab">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="bi bi-plug me-2"></i> API 管理
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <h6 class="mb-0">API 端点</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="list-group">
+                                            <div class="list-group-item bg-dark text-light border-secondary">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <small class="text-success">GET</small>
+                                                    <small>/api/health</small>
+                                                </div>
+                                                <small class="text-muted">健康检查</small>
+                                            </div>
+                                            <div class="list-group-item bg-dark text-light border-secondary">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <small class="text-primary">GET</small>
+                                                    <small>/api/models</small>
+                                                </div>
+                                                <small class="text-muted">获取模型列表</small>
+                                            </div>
+                                            <div class="list-group-item bg-dark text-light border-secondary">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <small class="text-warning">POST</small>
+                                                    <small>/api/models/switch</small>
+                                                </div>
+                                                <small class="text-muted">切换模型</small>
+                                            </div>
+                                            <div class="list-group-item bg-dark text-light border-secondary">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <small class="text-warning">POST</small>
+                                                    <small>/api/models/test</small>
+                                                </div>
+                                                <small class="text-muted">测试模型</small>
+                                            </div>
+                                            <div class="list-group-item bg-dark text-light border-secondary">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <small class="text-primary">GET</small>
+                                                    <small>/api/performance</small>
+                                                </div>
+                                                <small class="text-muted">性能报告</small>
+                                            </div>
+                                            <div class="list-group-item bg-dark text-light border-secondary">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <small class="text-primary">GET</small>
+                                                    <small>/api/logs</small>
+                                                </div>
+                                                <small class="text-muted">系统日志</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6 class="mb-0">API 测试</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <label class="form-label">选择端点</label>
+                                            <select class="form-select bg-dark text-light border-secondary" 
+                                                    id="apiEndpointSelect">
+                                                <option value="/api/health">GET /api/health</option>
+                                                <option value="/api/models">GET /api/models</option>
+                                                <option value="/api/performance">GET /api/performance</option>
+                                                <option value="/api/logs">GET /api/logs</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label">请求方法</label>
+                                            <div class="btn-group w-100" role="group">
+                                                <input type="radio" class="btn-check" name="apiMethod" 
+                                                       id="methodGet" autocomplete="off" checked>
+                                                <label class="btn btn-outline-primary" for="methodGet">GET</label>
+                                                
+                                                <input type="radio" class="btn-check" name="apiMethod" 
+                                                       id="methodPost" autocomplete="off">
+                                                <label class="btn btn-outline-warning" for="methodPost">POST</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label">请求参数 (JSON)</label>
+                                            <textarea class="form-control bg-dark text-light border-secondary" 
+                                                      id="apiRequestBody" rows="3" 
+                                                      placeholder='{"key": "value"}'></textarea>
+                                        </div>
+                                        
+                                        <button class="btn btn-primary w-100 mb-3" id="testApiBtn">
+                                            <i class="bi bi-play-circle me-2"></i> 测试 API
+                                        </button>
+                                        
+                                        <div class="mt-3">
+                                            <label class="form-label">响应结果</label>
+                                            <pre class="bg-dark text-light p-3 rounded" 
+                                                 style="min-height: 200px; max-height: 300px; overflow: auto;" 
+                                                 id="apiResponse">
+点击"测试 API"查看结果
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 通知容器 -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto" id="toastTitle">通知</strong>
+                <small id="toastTime">刚刚</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="toastMessage">
+                这是一条通知消息。
+            </div>
+        </div>
+    </div>
+    
+    <!-- 模型详情模态框 -->
+    <div class="modal fade" id="modelDetailModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title">模型详情</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="modelDetailContent">
+                    加载中...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="switchToModelBtn">切换到该模型</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 添加模型模态框 -->
+    <div class="modal fade" id="addModelModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title">添加新模型</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addModelForm">
+                        <div class="mb-3">
+                            <label class="form-label">模型名称</label>
+                            <input type="text" class="form-control bg-dark text-light border-secondary" 
+                                   placeholder="例如: deepseek/deepseek-chat" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Provider</label>
+                            <input type="text" class="form-control bg-dark text-light border-secondary" 
+                                   placeholder="例如: deepseek" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">优先级 (数字越小优先级越高)</label>
+                            <input type="number" class="form-control bg-dark text-light border-secondary" 
+                                   min="1" max="100" value="10" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">初始状态</label>
+                            <select class="form-select bg-dark text-light border-secondary">
+                                <option value="active">活跃</option>
+                                <option value="disabled">禁用</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">备注</label>
+                            <textarea class="form-control bg-dark text-light border-secondary" 
+                                      rows="2" placeholder="可选备注信息"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="submitAddModelBtn">添加模型</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript 依赖 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/socket.io-client@4.7.2/dist/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- 主应用脚本 -->
+    <script>
+        // 全局变量
+        let socket = null;
+        let currentTab = 'dashboard';
+        let modelsData = [];
+        let performanceData = null;
+        let systemInfo = null;
+        
+        // 初始化函数
+        document.addEventListener('DOMContentLoaded', function() {
+            initUI();
+            connectWebSocket();
+            loadInitialData();
+            startClock();
+        });
+        
+        // 初始化UI事件
+        function initUI() {
+            // 标签页切换
+            document.querySelectorAll('.nav-link[data-tab]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const tab = this.getAttribute('data-tab');
+                    switchTab(tab);
+                });
+            });
+            
+            // 刷新按钮
+            document.getElementById('refreshBtn').addEventListener('click', refreshAllData);
+            
+            // 快速操作
+            document.getElementById('runAutoSwitch').addEventListener('click', runAutoSwitch);
+            document.getElementById('testAllModels').addEventListener('click', testAllModels);
+            document.getElementById('createBackup').addEventListener('click', createBackup);
+            document.getElementById('openApiDocs').addEventListener('click', () => switchTab('api'));
+            
+            // 模型管理按钮
+            document.getElementById('addModelBtn').addEventListener('click', showAddModelModal);
+            document.getElementById('refreshModelsBtn').addEventListener('click', loadModels);
+            
+            // 设置表单
+            document.getElementById('autoSwitchSettings').addEventListener('submit', saveSettings);
+            document.getElementById('checkInterval').addEventListener('input', function() {
+                document.getElementById('checkIntervalValue').textContent = this.value + '分钟';
+            });
+            
+            // 系统维护按钮
+            document.getElementById('backupNowBtn').addEventListener('click', createBackup);
+            document.getElementById('clearLogsBtn').addEventListener('click', clearLogs);
+            document.getElementById('resetStatsBtn').addEventListener('click', resetStats);
+            
+            // API测试
+            document.getElementById('testApiBtn').addEventListener('click', testApi);
+            
+            // 日志过滤
+            document.getElementById('filterAllLogs').addEventListener('click', () => loadLogs('all'));
+            document.getElementById('filterInfoLogs').addEventListener('click', () => loadLogs('info'));
+            document.getElementById('filterWarningLogs').addEventListener('click', () => loadLogs('warning'));
+            document.getElementById('filterErrorLogs').addEventListener('click', () => loadLogs('error'));
+            document.getElementById('clearLogSearch').addEventListener('click', () => {
+                document.getElementById('logSearch').value = '';
+                loadLogs('all');
+            });
+            
+            // 搜索日志
+            document.getElementById('logSearch').addEventListener('input', function() {
+                filterLogs(this.value);
+            });
+        }
+        
+        // 连接WebSocket
+        function connectWebSocket() {
+            const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsUrl = `${protocol}//${window.location.host}`;
+            
+            socket = io(wsUrl);
+            
+            socket.on('connect', () => {
+                updateConnectionStatus(true);
+                showToast('连接成功', '已连接到实时数据服务', 'success');
+            });
+            
+            socket.on('disconnect', () => {
+                updateConnectionStatus(false);
+                showToast('连接断开', '实时数据服务已断开', 'warning');
+            });

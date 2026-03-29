@@ -1,0 +1,233 @@
+{
+  "version": "1.0",
+  "created_at": "2026-03-29T10:04:00Z",
+  "models": [
+    {
+      "id": "M001",
+      "name": "deepseek/deepseek-chat",
+      "provider": "deepseek",
+      "model_id": "deepseek-chat",
+      "added_at": "2026-03-19T15:57:38Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 3,
+      "notes": "默认备用模型，稳定可靠"
+    },
+    {
+      "id": "M002",
+      "name": "deepseek/deepseek-reasoner",
+      "provider": "deepseek",
+      "model_id": "deepseek-reasoner",
+      "added_at": "2026-03-19T15:57:38Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 4,
+      "notes": "推理模型，适合复杂任务"
+    },
+    {
+      "id": "M003",
+      "name": "gptagent/claude-sonnet-4-6",
+      "provider": "gptagent",
+      "model_id": "claude-sonnet-4-6",
+      "added_at": "2026-03-19T15:57:38Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 5,
+      "notes": "Claude 模型，创意写作"
+    },
+    {
+      "id": "M004",
+      "name": "openrouter/deepseek-chat",
+      "provider": "openrouter",
+      "model_id": "deepseek-chat",
+      "added_at": "2026-03-19T15:57:38Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 6,
+      "notes": "OpenRouter 代理，备用通道"
+    },
+    {
+      "id": "M005",
+      "name": "openrouter/deepseek-reasoner",
+      "provider": "openrouter",
+      "model_id": "deepseek-reasoner",
+      "added_at": "2026-03-19T15:57:38Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 7,
+      "notes": "OpenRouter 推理代理"
+    },
+    {
+      "id": "M006",
+      "name": "chudian/minimax-m2.5",
+      "provider": "chudian",
+      "model_id": "minimax-m2.5",
+      "added_at": "2026-03-19T15:57:38Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 8,
+      "notes": "MiniMax 早期版本"
+    },
+    {
+      "id": "M007",
+      "name": "chudian/deepseek-chat",
+      "provider": "chudian",
+      "model_id": "deepseek-chat",
+      "added_at": "2026-03-19T15:57:38Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 9,
+      "notes": "初点代理，国内优化"
+    },
+    {
+      "id": "M008",
+      "name": "chudian/deepseek-reasoner",
+      "provider": "chudian",
+      "model_id": "deepseek-reasoner",
+      "added_at": "2026-03-19T15:57:38Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 10,
+      "notes": "初点推理代理"
+    },
+    {
+      "id": "M009",
+      "name": "chudian/deepseek-v3.2",
+      "provider": "chudian",
+      "model_id": "deepseek-v3.2",
+      "added_at": "2026-03-19T15:57:38Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 11,
+      "notes": "DeepSeek V3.2 版本"
+    },
+    {
+      "id": "M010",
+      "name": "chudian/doubao-seed-2.0-code",
+      "provider": "chudian",
+      "model_id": "doubao-seed-2.0-code",
+      "added_at": "2026-03-19T15:57:38Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 12,
+      "notes": "豆包代码模型，编程专用"
+    },
+    {
+      "id": "M011",
+      "name": "chudian/doubao-seed-2.0-pro",
+      "provider": "chudian",
+      "model_id": "doubao-seed-2.0-pro",
+      "added_at": "2026-03-19T15:57:38Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 13,
+      "notes": "豆包专业版，综合能力强"
+    },
+    {
+      "id": "M012",
+      "name": "openai_betterclaude/gpt-4o",
+      "provider": "openai_betterclaude",
+      "model_id": "gpt-4o",
+      "added_at": "2026-03-19T15:57:38Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 14,
+      "notes": "GPT-4o，多模态能力强"
+    },
+    {
+      "id": "M013",
+      "name": "openai_betterclaude/gpt-4o-mini",
+      "provider": "openai_betterclaude",
+      "model_id": "gpt-4o-mini",
+      "added_at": "2026-03-19T15:57:38Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 15,
+      "notes": "GPT-4o Mini，成本优化"
+    },
+    {
+      "id": "M014",
+      "name": "openai_betterclaude/o1-mini",
+      "provider": "openai_betterclaude",
+      "model_id": "o1-mini",
+      "added_at": "2026-03-19T15:57:38Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 16,
+      "notes": "o1-mini，推理优化"
+    },
+    {
+      "id": "M015",
+      "name": "openai_betterclaude/o1-preview",
+      "provider": "openai_betterclaude",
+      "model_id": "o1-preview",
+      "added_at": "2026-03-19T15:57:38Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 17,
+      "notes": "o1-preview，高级推理"
+    },
+    {
+      "id": "M016",
+      "name": "openai_betterclaude/gpt-5.4",
+      "provider": "openai_betterclaude",
+      "model_id": "gpt-5.4",
+      "added_at": "2026-03-19T15:57:38Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 18,
+      "notes": "GPT-5.4，最新版本"
+    },
+    {
+      "id": "M017",
+      "name": "openai_betterclaude/gpt-5.4-mini",
+      "provider": "openai_betterclaude",
+      "model_id": "gpt-5.4-mini",
+      "added_at": "2026-03-19T15:57:38Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 19,
+      "notes": "GPT-5.4 Mini，轻量版"
+    },
+    {
+      "id": "M018",
+      "name": "aicodee/MiniMax-M2.5-highspeed",
+      "provider": "aicodee",
+      "model_id": "MiniMax-M2.5-highspeed",
+      "added_at": "2026-03-29T09:47:00Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 1,
+      "notes": "主模型，高速版本，综合能力强"
+    },
+    {
+      "id": "M019",
+      "name": "aicodee/MiniMax-M2.7-highspeed",
+      "provider": "aicodee",
+      "model_id": "MiniMax-M2.7-highspeed",
+      "added_at": "2026-03-29T09:47:00Z",
+      "status": "active",
+      "last_used": null,
+      "priority": 2,
+      "notes": "主要备用，更高速版本"
+    }
+  ],
+  "switch_log": [
+    {
+      "timestamp": "2026-03-29T10:04:30Z",
+      "from": "deepseek/deepseek-chat",
+      "to": "aicodee/MiniMax-M2.5-highspeed",
+      "reason": "初始配置",
+      "success": true
+    }
+  ],
+  "settings": {
+    "auto_switch_enabled": true,
+    "check_interval_minutes": 5,
+    "max_retries": 3,
+    "notify_on_switch": true,
+    "default_priority_order": "priority_asc",
+    "log_retention_days": 7,
+    "max_log_size_mb": 10
+  }
+}
