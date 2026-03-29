@@ -2,117 +2,117 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-v4.0.0-blue)
+![版本](https://img.shields.io/badge/版本-v4.0.0-blue)
 ![Python](https://img.shields.io/badge/python-3.7+-green)
 ![Node.js](https://img.shields.io/badge/node.js-14+-orange)
-![License](https://img.shields.io/badge/license-MIT-lightgrey)
-![OpenClaw](https://img.shields.io/badge/OpenClaw-Official-brightgreen)
-![High Availability](https://img.shields.io/badge/High%20Availability-99.9%25-success)
+![许可证](https://img.shields.io/badge/许可证-MIT-lightgrey)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-官方-brightgreen)
+![高可用性](https://img.shields.io/badge/高可用性-99.9%25-success)
 
-**Intelligent AI Model Load Balancing for OpenClaw**  
-**Smart Failover · Performance Optimization · Cost Control**
+**OpenClaw 智能 AI 模型负载均衡平台**  
+**智能故障转移 · 性能优化 · 成本控制**
 
-[🚀 Quick Start](#-quick-start) | [✨ Features](#-features) | [📊 Demo](#-demo) | [🔧 Installation](#-installation) | [📖 Documentation](#-documentation) | [中文文档](README_CN.md)
+[🚀 快速开始](#-快速开始) | [✨ 特性功能](#-特性功能) | [📊 演示截图](#-演示截图) | [🔧 安装部署](#-安装部署) | [📖 文档指南](#-文档指南) | [English Documentation](README_EN.md)
 
 </div>
 
-## 🎯 Project Overview
+## 🎯 项目概述
 
-**OpenClaw Model Balancer (OMB)** is an enterprise-grade AI model management platform that provides intelligent load balancing, automatic failover, and performance optimization for AI models within the OpenClaw ecosystem.
+**OpenClaw Model Balancer (OMB)** 是一个企业级的 AI 模型管理平台，为 OpenClaw 生态系统提供智能负载均衡、自动故障转移和性能优化功能。
 
-### 🌟 Core Value Proposition
+### 🌟 核心价值
 
-- **🧠 Intelligent Routing**: AI-driven multi-dimensional model scoring and selection
-- **⚡ High Availability**: Smart failover ensuring 99.9% uptime
-- **💰 Cost Optimization**: Time-sensitive cost efficiency optimization
-- **📊 Data-Driven Decisions**: Performance-based intelligent routing
-- **🖥️ Modern Management**: Intuitive visual management interface
+- **🧠 智能路由**: AI 驱动的多维度模型评分和选择
+- **⚡ 高可用性**: 智能故障转移，确保 99.9% 服务可用性
+- **💰 成本优化**: 时间敏感的成本效率优化
+- **📊 数据驱动**: 基于性能的智能路由决策
+- **🖥️ 现代化管理**: 直观的可视化管理界面
 
-## ✨ Features
+## ✨ 特性功能
 
-### 🧠 Intelligent AI Optimization
-| Feature | Description | Benefit |
-|---------|-------------|---------|
-| **Multi-Dimensional Scoring** | 6 dimensions: response time, success rate, cost efficiency, etc. | Comprehensive model evaluation |
-| **Time-Sensitive Routing** | Performance priority during work hours, cost priority off-peak | Intelligent adaptation to usage patterns |
-| **Predictive Analytics** | Historical data-based performance trend prediction | Proactive issue detection |
-| **Cost Efficiency Optimization** | Automatic selection of most cost-effective models | 30%+ cost savings |
+### 🧠 AI 智能优化
+| 特性 | 描述 | 优势 |
+|------|------|------|
+| **多维度评分** | 6个维度：响应时间、成功率、成本效率等 | 全面评估模型性能 |
+| **时间敏感路由** | 工作时间优先性能，非高峰时段优先成本 | 智能适应使用场景 |
+| **预测性分析** | 基于历史数据的性能趋势预测 | 提前发现问题 |
+| **成本效率优化** | 自动选择性价比最高的模型 | 节省 30%+ 成本 |
 
-### ⚖️ Load Balancing & Failover
-| Feature | Description | Benefit |
-|---------|-------------|---------|
-| **Intelligent Load Distribution** | Dynamic traffic distribution based on model capacity | Optimal resource utilization |
-| **Automatic Failover** | Seamless switch to backup models on failure | Zero downtime service |
-| **Health Monitoring** | Real-time model health and performance monitoring | Proactive maintenance |
-| **Circuit Breaker Pattern** | Automatic isolation of failing models | System stability protection |
+### ⚖️ 负载均衡与故障转移
+| 特性 | 描述 | 优势 |
+|------|------|------|
+| **智能负载分配** | 基于模型容量的动态流量分配 | 最优资源利用率 |
+| **自动故障转移** | 故障时无缝切换到备用模型 | 零停机服务 |
+| **健康监控** | 实时模型健康状态和性能监控 | 主动维护 |
+| **熔断器模式** | 自动隔离故障模型 | 系统稳定性保护 |
 
-### 🖥️ Management Interface
-| Feature | Description | Benefit |
-|---------|-------------|---------|
-| **OMB Dashboard** | Modern dark theme management interface | Intuitive and user-friendly |
-| **Real-time Visualization** | Chart.js charts showing model scores and traffic | Data at a glance |
-| **Intelligent Analytics** | Display AI selection rationale and weight distribution | Transparent decision-making |
-| **One-Click Operations** | Optimize, test, switch functions | Easy operation |
+### 🖥️ 管理界面
+| 特性 | 描述 | 优势 |
+|------|------|------|
+| **OMB 仪表板** | 现代化深色主题管理界面 | 直观易用 |
+| **实时可视化** | Chart.js 图表展示模型评分和流量 | 数据一目了然 |
+| **智能分析** | 显示 AI 选择理由和权重分配 | 决策透明化 |
+| **一键操作** | 优化、测试、切换功能 | 操作便捷 |
 
-### 🔌 System Integration
-| Feature | Description | Benefit |
-|---------|-------------|---------|
-| **RESTful API** | Complete API for integration and automation | Easy system integration |
-| **WebSocket Support** | Real-time notifications and updates | Instant status updates |
-| **OpenClaw Integration** | Seamless integration with OpenClaw ecosystem | Unified platform experience |
-| **Extensible Architecture** | Plugin-based architecture for easy extension | Future-proof design |
+### 🔌 系统集成
+| 特性 | 描述 | 优势 |
+|------|------|------|
+| **RESTful API** | 完整的 API 用于集成和自动化 | 易于系统集成 |
+| **WebSocket 支持** | 实时通知和更新 | 即时状态更新 |
+| **OpenClaw 集成** | 与 OpenClaw 生态系统无缝集成 | 统一平台体验 |
+| **可扩展架构** | 基于插件的架构易于扩展 | 面向未来设计 |
 
-## 🚀 Quick Start
+## 🚀 快速开始
 
-### Prerequisites
+### 环境要求
 - Python 3.7+
 - Node.js 14+
-- OpenClaw installed and running
+- 已安装并运行 OpenClaw
 
-### Installation
+### 安装部署
 ```bash
-# Clone the repository
+# 克隆仓库
 git clone https://github.com/linux503/openclaw-model-balancer.git
 cd openclaw-model-balancer
 
-# Install dependencies
+# 安装依赖
 pip install -r requirements.txt
 npm install --prefix admin
 
-# Start the system
+# 启动系统
 ./tools/start_all.sh
 ```
 
-### Access the Dashboard
-Open your browser and navigate to:
-- **Management Dashboard**: http://localhost:8191/admin
-- **API Documentation**: http://localhost:8191/api/docs
-- **Health Check**: http://localhost:8191/health
+### 访问管理界面
+在浏览器中访问：
+- **管理仪表板**: http://localhost:8191/admin
+- **API 文档**: http://localhost:8191/api/docs
+- **健康检查**: http://localhost:8191/health
 
-## 📊 Demo
+## 📊 演示截图
 
-### Live Demo
-Visit our live demo at: [Coming Soon]
+### 在线演示
+访问我们的在线演示：[即将上线]
 
-### Screenshots
+### 界面截图
 
-#### OMB Dashboard
-![OMB Dashboard](https://via.placeholder.com/800x400/2D5BFF/FFFFFF?text=OMB+Dashboard+Preview)
+#### OMB 仪表板
+![OMB 仪表板](https://via.placeholder.com/800x400/2D5BFF/FFFFFF?text=OMB+仪表板预览)
 
-#### Model Performance Analytics
-![Performance Analytics](https://via.placeholder.com/800x400/4A90E2/FFFFFF?text=Model+Performance+Analytics)
+#### 模型性能分析
+![性能分析](https://via.placeholder.com/800x400/4A90E2/FFFFFF?text=模型性能分析)
 
-#### AI Optimization Results
-![AI Optimization](https://via.placeholder.com/800x400/00C853/FFFFFF?text=AI+Optimization+Results)
+#### AI 优化结果
+![AI 优化](https://via.placeholder.com/800x400/00C853/FFFFFF?text=AI+优化结果)
 
-> **Note**: These are placeholder images. Actual screenshots will be added after deployment.
+> **注意**: 这些是占位符图片，实际部署后会添加真实截图。
 
-## 🔧 Installation
+## 🔧 安装部署
 
-### Detailed Installation Guide
-See [INSTALL.md](INSTALL.md) for complete installation instructions.
+### 详细安装指南
+查看 [INSTALL.md](INSTALL.md) 获取完整的安装说明。
 
-### Configuration
+### 配置说明
 ```yaml
 # config/default.yaml
 omb:
@@ -134,166 +134,166 @@ omb:
     time_sensitive: true
 ```
 
-### Docker Deployment
+### Docker 部署
 ```bash
-# Build the Docker image
+# 构建 Docker 镜像
 docker build -t openclaw-model-balancer .
 
-# Run the container
+# 运行容器
 docker run -p 8191:8191 openclaw-model-balancer
 ```
 
-## 📖 Documentation
+## 📖 文档指南
 
-### Complete Documentation
-- **[User Guide](docs/USER_GUIDE.md)** - Complete user manual
-- **[API Reference](docs/API_REFERENCE.md)** - Complete API documentation
-- **[Architecture](docs/ARCHITECTURE.md)** - System architecture overview
-- **[Deployment Guide](docs/DEPLOYMENT_GUIDE.md)** - Production deployment guide
+### 完整文档
+- **[用户指南](docs/USER_GUIDE.md)** - 完整的用户手册
+- **[API 参考](docs/API_REFERENCE.md)** - 完整的 API 文档
+- **[架构说明](docs/ARCHITECTURE.md)** - 系统架构概述
+- **[部署指南](docs/DEPLOYMENT_GUIDE.md)** - 生产环境部署指南
 
-### Quick References
-- [Configuration Options](docs/CONFIGURATION.md)
-- [Troubleshooting Guide](docs/TROUBLESHOOTING.md)
-- [Performance Tuning](docs/PERFORMANCE_TUNING.md)
-- [Security Guide](docs/SECURITY_GUIDE.md)
+### 快速参考
+- [配置选项](docs/CONFIGURATION.md)
+- [故障排除](docs/TROUBLESHOOTING.md)
+- [性能调优](docs/PERFORMANCE_TUNING.md)
+- [安全指南](docs/SECURITY_GUIDE.md)
 
-## 🏗️ Architecture
+## 🏗️ 系统架构
 
-### System Architecture
+### 架构图
 ```mermaid
 graph TB
-    A[Client Requests] --> B[OMB Gateway]
-    B --> C[Load Balancer]
-    C --> D[Model Router]
-    D --> E[AI Model 1]
-    D --> F[AI Model 2]
-    D --> G[AI Model N]
+    A[客户端请求] --> B[OMB 网关]
+    B --> C[负载均衡器]
+    C --> D[模型路由器]
+    D --> E[AI 模型 1]
+    D --> F[AI 模型 2]
+    D --> G[AI 模型 N]
     
-    H[Performance Monitor] --> I[Analytics Engine]
-    I --> J[AI Optimizer]
-    J --> K[Scoring Engine]
+    H[性能监控器] --> I[分析引擎]
+    I --> J[AI 优化器]
+    J --> K[评分引擎]
     K --> D
     
-    L[Management Dashboard] --> M[Configuration Manager]
+    L[管理仪表板] --> M[配置管理器]
     M --> B
     M --> H
 ```
 
-### Core Components
-1. **Gateway Layer**: Request routing and load distribution
-2. **Optimization Engine**: AI-driven model selection
-3. **Monitoring System**: Real-time performance tracking
-4. **Management Interface**: Visual configuration and control
-5. **API Layer**: Integration and automation interfaces
+### 核心组件
+1. **网关层**: 请求路由和负载分配
+2. **优化引擎**: AI 驱动的模型选择
+3. **监控系统**: 实时性能跟踪
+4. **管理界面**: 可视化配置和控制
+5. **API 层**: 集成和自动化接口
 
-## 📈 Performance Metrics
+## 📈 性能指标
 
-### Benchmark Results
-| Metric | Before OMB | With OMB | Improvement |
-|--------|------------|----------|-------------|
-| **Uptime** | 95% | 99.9% | +4.9% |
-| **Response Time** | 2.5s | 1.2s | -52% |
-| **Cost Efficiency** | 100% | 70% | -30% |
-| **Success Rate** | 92% | 98% | +6% |
+### 基准测试结果
+| 指标 | 使用前 | 使用后 | 改进 |
+|------|--------|--------|------|
+| **可用性** | 95% | 99.9% | +4.9% |
+| **响应时间** | 2.5秒 | 1.2秒 | -52% |
+| **成本效率** | 100% | 70% | -30% |
+| **成功率** | 92% | 98% | +6% |
 
-### Scalability
-- **Throughput**: 10,000+ requests per second
-- **Concurrent Connections**: 1,000+ simultaneous connections
-- **Model Support**: 100+ AI models
-- **Data Retention**: 90 days performance history
+### 可扩展性
+- **吞吐量**: 10,000+ 请求/秒
+- **并发连接**: 1,000+ 同时连接
+- **模型支持**: 100+ AI 模型
+- **数据保留**: 90 天性能历史
 
-## 🔄 Workflow
+## 🔄 工作流程
 
-### Model Selection Process
+### 模型选择流程
 ```mermaid
 sequenceDiagram
-    participant C as Client
-    participant O as OMB Gateway
-    participant S as Scoring Engine
-    participant M as Model Registry
+    participant C as 客户端
+    participant O as OMB 网关
+    participant S as 评分引擎
+    participant M as 模型注册表
     
-    C->>O: API Request
-    O->>S: Request Model Score
-    S->>M: Get Model Metrics
-    M-->>S: Return Metrics
-    S-->>O: Best Model ID
-    O->>M: Route to Model
-    M-->>C: Return Response
+    C->>O: API 请求
+    O->>S: 请求模型评分
+    S->>M: 获取模型指标
+    M-->>S: 返回指标
+    S-->>O: 最佳模型 ID
+    O->>M: 路由到模型
+    M-->>C: 返回响应
     
-    Note over S,M: Real-time scoring based on<br/>6 performance dimensions
+    Note over S,M: 基于6个性能维度的实时评分
 ```
 
-### Optimization Cycle
-1. **Data Collection**: Gather performance metrics
-2. **Analysis**: Calculate multi-dimensional scores
-3. **Decision**: Select optimal model based on weights
-4. **Routing**: Direct traffic to selected model
-5. **Monitoring**: Track results and adjust weights
+### 优化循环
+1. **数据收集**: 收集性能指标
+2. **分析**: 计算多维度评分
+3. **决策**: 基于权重选择最优模型
+4. **路由**: 将流量导向选定模型
+5. **监控**: 跟踪结果并调整权重
 
-## 🎯 Use Cases
+## 🎯 使用场景
 
-### Enterprise AI Services
-- **Chatbot Platforms**: Ensure high availability for customer service
-- **Content Generation**: Optimize cost and quality for content creation
-- **Data Analysis**: Balance accuracy and speed for analytics
-- **Image Processing**: Distribute load across multiple vision models
+### 企业 AI 服务
+- **聊天机器人平台**: 确保客户服务的高可用性
+- **内容生成**: 优化内容创作的成本和质量
+- **数据分析**: 平衡分析任务的准确性和速度
+- **图像处理**: 在多个视觉模型间分配负载
 
-### Developer Tools
-- **API Gateway**: Intelligent routing for AI API calls
-- **Testing Framework**: Automated model comparison and selection
-- **Development Sandbox**: Safe testing environment for new models
-- **Monitoring Dashboard**: Real-time performance insights
+### 开发者工具
+- **API 网关**: AI API 调用的智能路由
+- **测试框架**: 自动化的模型比较和选择
+- **开发沙箱**: 新模型的安全测试环境
+- **监控仪表板**: 实时性能洞察
 
-### Research & Education
-- **Model Comparison**: Objective comparison of AI models
-- **Performance Analysis**: Detailed performance metrics
-- **Cost Optimization**: Budget-aware model selection
-- **Educational Tool**: Learn about AI model management
+### 研究与教育
+- **模型比较**: AI 模型的客观比较
+- **性能分析**: 详细的性能指标
+- **成本优化**: 预算感知的模型选择
+- **教育工具**: 学习 AI 模型管理
 
-## 🤝 Contributing
+## 🤝 贡献指南
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+我们欢迎贡献！请查看我们的[贡献指南](CONTRIBUTING.md)了解详情。
 
-### Development Setup
+### 开发环境设置
 ```bash
-# Fork and clone the repository
+# Fork 并克隆仓库
 git clone https://github.com/your-username/openclaw-model-balancer.git
 
-# Set up development environment
+# 设置开发环境
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements-dev.txt
 
-# Run tests
+# 运行测试
 pytest tests/
 ```
 
-### Code Style
+### 代码风格
 - Python: PEP 8
-- JavaScript: ESLint with Airbnb style
-- Documentation: Google style docstrings
+- JavaScript: ESLint with Airbnb 风格
+- 文档: Google 风格文档字符串
 
-## 📄 License
+## 📄 许可证
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
 
-## 🙏 Acknowledgments
+## 🙏 致谢
 
-- **OpenClaw Team** for the amazing ecosystem
-- **Contributors** who helped build OMB
-- **Community** for feedback and support
+- **OpenClaw 团队** 提供的优秀生态系统
+- **贡献者** 帮助构建 OMB
+- **社区** 提供的反馈和支持
 
-## 📞 Support
+## 📞 支持
 
-### Community Support
-- **GitHub Issues**: [Report bugs or request features](https://github.com/linux503/openclaw-model-balancer/issues)
-- **Discord**: Join our [OpenClaw Discord](https://discord.gg/clawd)
-- **Documentation**: [Complete documentation](docs/)
+### 社区支持
+- **GitHub Issues**: [报告问题或请求功能](https://github.com/linux503/openclaw-model-balancer/issues)
+- **Discord**: 加入我们的 [OpenClaw Discord](https://discord.gg/clawd)
+- **文档**: [完整文档](docs/)
 
-### Commercial Support
-Coming Soon: [SkillBox.lol](https://skillbox.lol/) | [Email: abbtoe@yandex.com](mailto:abbtoe@yandex.com)
+### 商业支持
+即将发布：[SkillBox.lol](https://skillbox.lol/) | [邮箱: abbtoe@yandex.com](mailto:abbtoe@yandex.com)
 
-## 🌟 Star History
+## 🌟 Star 历史
 
 [![Star History Chart](https://api.star-history.com/svg?repos=linux503/openclaw-model-balancer&type=Date)](https://star-history.com/#linux503/openclaw-model-balancer&Date)
 
@@ -301,9 +301,9 @@ Coming Soon: [SkillBox.lol](https://skillbox.lol/) | [Email: abbtoe@yandex.com](
 
 <div align="center">
 
-**OpenClaw Model Balancer** - Intelligent AI Model Load Balancing  
-Part of the **OpenClaw Ecosystem**
+**OpenClaw Model Balancer** - OpenClaw 智能 AI 模型负载均衡  
+**OpenClaw 生态系统** 的一部分
 
-[🏠 Homepage](https://openclaw.ai) | [📚 Docs](https://docs.openclaw.ai) | [🐙 GitHub](https://github.com/linux503/openclaw-model-balancer) | [💬 Discord](https://discord.gg/clawd)
+[🏠 主页](https://openclaw.ai) | [📚 文档](https://docs.openclaw.ai) | [🐙 GitHub](https://github.com/linux503/openclaw-model-balancer) | [💬 Discord](https://discord.gg/clawd)
 
 </div>
