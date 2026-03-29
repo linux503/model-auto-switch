@@ -44,7 +44,7 @@
 ## 📁 项目结构
 
 ```
-model-auto-switch/
+openclaw-model-balancer/
 ├── 📚 文档/
 │   ├── README.md              # 项目首页
 │   ├── GITHUB_README.md       # 详细版README
@@ -87,7 +87,7 @@ model-auto-switch/
 
 ### 1. 一键安装
 ```bash
-curl -sSL https://raw.githubusercontent.com/yourusername/openclaw-model-auto-switch/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/yourusername/openclaw-openclaw-model-balancer/main/install.sh | bash
 ```
 
 ### 2. 启动管理后台
@@ -203,8 +203,8 @@ cd admin
 ### 本地部署
 ```bash
 # 克隆仓库
-git clone https://github.com/yourusername/openclaw-model-auto-switch.git
-cd openclaw-model-auto-switch
+git clone https://github.com/yourusername/openclaw-openclaw-model-balancer.git
+cd openclaw-openclaw-model-balancer
 
 # 安装依赖
 ./install.sh
@@ -215,7 +215,7 @@ cd admin && ./start.sh
 
 ### Docker部署
 ```bash
-docker run -p 8191:8191 yourusername/model-auto-switch
+docker run -p 8191:8191 yourusername/openclaw-model-balancer
 ```
 
 ### Kubernetes部署
@@ -223,20 +223,20 @@ docker run -p 8191:8191 yourusername/model-auto-switch
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: model-auto-switch
+  name: openclaw-model-balancer
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: model-auto-switch
+      app: openclaw-model-balancer
   template:
     metadata:
       labels:
-        app: model-auto-switch
+        app: openclaw-model-balancer
     spec:
       containers:
-      - name: model-auto-switch
-        image: yourusername/model-auto-switch:latest
+      - name: openclaw-model-balancer
+        image: yourusername/openclaw-model-balancer:latest
         ports:
         - containerPort: 8191
 ```
@@ -310,7 +310,7 @@ CMD ["node", "admin/server.js"]
 
 ## 📞 联系方式
 
-- **GitHub**: [yourusername/openclaw-model-auto-switch](https://github.com/yourusername/openclaw-model-auto-switch)
+- **GitHub**: [yourusername/openclaw-openclaw-model-balancer](https://github.com/yourusername/openclaw-openclaw-model-balancer)
 - **Discord**: [OpenClaw社区](https://discord.gg/clawd)
 - **文档**: [https://docs.openclaw.ai](https://docs.openclaw.ai)
 - **邮箱**: support@openclaw.ai

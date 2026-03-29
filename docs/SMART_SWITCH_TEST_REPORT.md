@@ -12,7 +12,7 @@
 4. ✅ 测试手动和自动切换的协调性
 
 ## 🔧 测试环境
-- **系统版本**: model-auto-switch v3.0.0
+- **系统版本**: openclaw-model-balancer v3.0.0
 - **模型数量**: 19个
 - **管理后台**: http://localhost:8191/admin
 - **API服务**: http://localhost:8191/api
@@ -250,6 +250,6 @@ ID    名称                                     提供商               状态 
 ---
 
 **测试完成时间**: 2026-03-29 23:35  
-**测试版本**: model-auto-switch v3.0.0  
+**测试版本**: openclaw-model-balancer v3.0.0  
 **测试状态**: ✅ 全部通过  
 **推荐部署**: ✅ 生产环境就绪

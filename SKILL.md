@@ -1,4 +1,4 @@
-# 🚀 model-auto-switch - OpenClaw 企业级模型自动切换与管理平台
+# 🚀 openclaw-model-balancer - OpenClaw 企业级模型自动切换与管理平台
 
 <div align="center">
 
@@ -12,7 +12,7 @@
 
 ## 🎯 概述
 
-**model-auto-switch** 是一个完整的企业级 AI 模型自动切换和管理平台，为 OpenClaw 提供智能的模型故障转移、性能优化和集中管理功能。确保 AI 服务的高可用性和稳定性。
+**openclaw-model-balancer** 是一个完整的企业级 AI 模型自动切换和管理平台，为 OpenClaw 提供智能的模型故障转移、性能优化和集中管理功能。确保 AI 服务的高可用性和稳定性。
 
 ## ✨ 核心功能
 
@@ -39,7 +39,7 @@
 ### 安装和启动
 ```bash
 # 进入技能目录
-cd /Users/a404/.openclaw/workspace/skills/model-auto-switch
+cd /Users/a404/.openclaw/workspace/skills/openclaw-model-balancer
 
 # 启动管理后台
 cd admin && ./start.sh
@@ -195,7 +195,7 @@ grep -i "error" /Users/a404/.openclaw/workspace/logs/model_switch.log
 
 <div align="center">
 
-**感谢使用 model-auto-switch！** 🚀
+**感谢使用 openclaw-model-balancer！** 🚀
 
 如果这个项目对你有帮助，请考虑：
 - ⭐ 给项目点个星

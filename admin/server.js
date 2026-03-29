@@ -20,7 +20,7 @@ const execAsync = util.promisify(exec);
 // 配置
 const PORT = process.env.PORT || 8191;
 const WORKSPACE_PATH = '/Users/a404/.openclaw/workspace';
-const SKILL_PATH = path.join(WORKSPACE_PATH, 'skills/model-auto-switch');
+const SKILL_PATH = path.join(WORKSPACE_PATH, 'skills/openclaw-model-balancer');
 
 // 创建 Express 应用
 const app = express();
@@ -79,7 +79,7 @@ const requireAuth = (req, res, next) => {
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'healthy',
-    service: 'model-auto-switch-admin',
+    service: 'openclaw-model-balancer-admin',
     version: '1.0.0',
     timestamp: new Date().toISOString()
   });

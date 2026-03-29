@@ -47,7 +47,7 @@ git commit -m "chore: release v3.0.0"
 ```
 
 ### 2. 创建 GitHub Release
-1. 访问: https://github.com/yourusername/openclaw-model-auto-switch/releases/new
+1. 访问: https://github.com/yourusername/openclaw-openclaw-model-balancer/releases/new
 2. 标签: `v3.0.0`
 3. 标题: `OpenClaw Model Auto-Switch v3.0.0`
 4. 描述: 使用下面的发布说明模板
@@ -92,8 +92,8 @@ git commit -m "chore: release v3.0.0"
 
 ```bash
 # 一键安装
-git clone https://github.com/yourusername/openclaw-model-auto-switch.git
-cd openclaw-model-auto-switch
+git clone https://github.com/yourusername/openclaw-openclaw-model-balancer.git
+cd openclaw-openclaw-model-balancer
 ./install.sh
 
 # 启动后台
@@ -138,11 +138,11 @@ cd admin
 
 ## 📞 支持
 - 📖 文档: [README.md](README.md)
-- 🐛 问题: [GitHub Issues](https://github.com/yourusername/openclaw-model-auto-switch/issues)
+- 🐛 问题: [GitHub Issues](https://github.com/yourusername/openclaw-openclaw-model-balancer/issues)
 - 💬 讨论: [OpenClaw Discord](https://discord.com/invite/clawd)
 
 ## 📦 下载
-- 源代码: [openclaw-model-auto-switch-v3.0.0.zip](下载链接)
+- 源代码: [openclaw-openclaw-model-balancer-v3.0.0.zip](下载链接)
 - Docker 镜像: 即将推出
 
 ---

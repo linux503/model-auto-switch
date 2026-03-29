@@ -1,4 +1,4 @@
-# model-auto-switch 技能完善清单
+# openclaw-model-balancer 技能完善清单
 
 ## ✅ 已完成的项目
 

@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# model-auto-switch 技能状态检查脚本
+# openclaw-model-balancer 技能状态检查脚本
 
 set -e
 
-echo "🔍 检查 model-auto-switch 技能状态..."
+echo "🔍 检查 openclaw-model-balancer 技能状态..."
 
 # 颜色定义
 RED='\033[0;31m'
@@ -278,7 +278,7 @@ show_summary() {
 main() {
     echo ""
     echo "=========================================="
-    echo "   model-auto-switch 技能状态检查 v1.0   "
+    echo "   openclaw-model-balancer 技能状态检查 v1.0   "
     echo "=========================================="
     echo ""
     

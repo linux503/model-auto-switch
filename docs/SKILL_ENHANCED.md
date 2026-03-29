@@ -10,7 +10,7 @@
 
 ### 贡献者
 - [OpenClaw 助手](https://github.com/openclaw) - 项目创建者和主要维护者
-- [所有贡献者](https://github.com/your-username/model-auto-switch/graphs/contributors)
+- [所有贡献者](https://github.com/your-username/openclaw-model-balancer/graphs/contributors)
 
 ### 使用的技术
 - [OpenClaw](https://openclaw.ai) - 基础平台
@@ -66,7 +66,7 @@ tail -f /Users/a404/.openclaw/workspace/logs/model_switch.log
 
 <div align="center">
 
-**感谢使用 model-auto-switch！** 🚀
+**感谢使用 openclaw-model-balancer！** 🚀
 
 如果这个项目对你有帮助，请考虑：
 - ⭐ 给项目点个星
@@ -109,7 +109,7 @@ tail -f /Users/a404/.openclaw/workspace/logs/model_switch.log
 - Python 版本: [例如 3.9.0]
 - Node.js 版本: [例如 18.0.0]
 - OpenClaw 版本: [例如 2026.3.24]
-- model-auto-switch 版本: [例如 3.0.0]
+- openclaw-model-balancer 版本: [例如 3.0.0]
 
 ## 日志输出
 [相关日志输出]
@@ -137,7 +137,7 @@ tail -f /Users/a404/.openclaw/workspace/logs/model_switch.log
 ```
 
 ### 联系信息
-- **GitHub**: [your-username/model-auto-switch](https://github.com/your-username/model-auto-switch)
+- **GitHub**: [your-username/openclaw-model-balancer](https://github.com/your-username/openclaw-model-balancer)
 - **Discord**: [OpenClaw Community](https://discord.gg/openclaw)
 - **电子邮件**: [your-email@example.com](mailto:your-email@example.com)
 
@@ -192,7 +192,7 @@ tail -f /Users/a404/.openclaw/workspace/logs/model_switch.log
 
 ### 社区资源
 - [OpenClaw Discord](https://discord.gg/openclaw)
-- [GitHub Discussions](https://github.com/your-username/model-auto-switch/discussions)
+- [GitHub Discussions](https://github.com/your-username/openclaw-model-balancer/discussions)
 - [社区博客](https://blog.openclaw.ai)
 
 ### 第三方集成
@@ -206,7 +206,7 @@ tail -f /Users/a404/.openclaw/workspace/logs/model_switch.log
 
 ### 案例 1: 电商客服系统
 **挑战**: 高峰期 AI 模型响应慢，影响客户体验
-**解决方案**: 使用 model-auto-switch 自动切换到性能最佳的模型
+**解决方案**: 使用 openclaw-model-balancer 自动切换到性能最佳的模型
 **结果**: 响应时间减少 40%，客户满意度提升 25%
 
 ### 案例 2: 内容生成平台
@@ -223,7 +223,7 @@ tail -f /Users/a404/.openclaw/workspace/logs/model_switch.log
 
 ## 🏆 用户评价
 
-> "model-auto-switch 彻底改变了我们管理 AI 模型的方式。现在我们可以专注于业务逻辑，而不是担心模型可用性问题。" - **某科技公司 CTO**
+> "openclaw-model-balancer 彻底改变了我们管理 AI 模型的方式。现在我们可以专注于业务逻辑，而不是担心模型可用性问题。" - **某科技公司 CTO**
 
 > "作为一个研究团队，我们需要频繁切换不同的模型进行实验。这个工具让整个过程变得非常简单和自动化。" - **某大学研究团队**
 
@@ -259,10 +259,10 @@ tail -f /Users/a404/.openclaw/workspace/logs/model_switch.log
 
 ```bash
 # 克隆项目
-git clone https://github.com/your-username/model-auto-switch.git
+git clone https://github.com/your-username/openclaw-model-balancer.git
 
 # 启动服务
-cd model-auto-switch && ./start_all.sh
+cd openclaw-model-balancer && ./start_all.sh
 
 # 打开管理后台
 open http://localhost:8191/admin
@@ -270,7 +270,7 @@ open http://localhost:8191/admin
 
 **加入我们，一起构建更可靠的 AI 未来！**
 
-[![Star on GitHub](https://img.shields.io/github/stars/your-username/model-auto-switch?style=social)](https://github.com/your-username/model-auto-switch)
+[![Star on GitHub](https://img.shields.io/github/stars/your-username/openclaw-model-balancer?style=social)](https://github.com/your-username/openclaw-model-balancer)
 [![Follow on Twitter](https://img.shields.io/twitter/follow/openclaw?style=social)](https://twitter.com/openclaw)
 
 </div>

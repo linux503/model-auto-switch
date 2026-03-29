@@ -2,10 +2,10 @@
 echo "🚀 GitHub 代码推送 - 认证助手"
 echo "=========================================="
 
-cd /Users/a404/.openclaw/workspace/skills/model-auto-switch
+cd /Users/a404/.openclaw/workspace/skills/openclaw-model-balancer
 
 echo "📊 当前状态:"
-echo "  仓库: https://github.com/linux503/model-auto-switch"
+echo "  仓库: https://github.com/linux503/openclaw-model-balancer"
 echo "  本地分支: $(git branch --show-current)"
 echo "  最新提交: $(git log -1 --pretty=format:'%h - %s')"
 echo ""
@@ -33,7 +33,7 @@ case $auth_method in
         if [[ -n "$github_token" ]]; then
             echo "🔄 使用 PAT 推送..."
             # 使用 PAT 进行推送
-            git push https://linux503:${github_token}@github.com/linux503/model-auto-switch.git main
+            git push https://linux503:${github_token}@github.com/linux503/openclaw-model-balancer.git main
         else
             echo "❌ 未提供 PAT"
             exit 1
@@ -45,7 +45,7 @@ case $auth_method in
         echo "🔑 使用 SSH 密钥"
         echo "------------------------------------------"
         echo "切换为 SSH 方式..."
-        git remote set-url origin git@github.com:linux503/model-auto-switch.git
+        git remote set-url origin git@github.com:linux503/openclaw-model-balancer.git
         git push -u origin main
         ;;
         
@@ -70,7 +70,7 @@ if [ $? -eq 0 ]; then
     echo ""
     echo "🎯 下一步:"
     echo "1. 推送标签: git push origin --tags"
-    echo "2. 创建 Release: https://github.com/linux503/model-auto-switch/releases/new"
+    echo "2. 创建 Release: https://github.com/linux503/openclaw-model-balancer/releases/new"
 else
     echo "❌ 推送失败"
     echo "请检查认证信息或网络连接"

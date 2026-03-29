@@ -71,7 +71,7 @@ check_gh_status() {
 
 # 函数：创建GitHub仓库
 create_github_repo() {
-    local repo_name="openclaw-model-auto-switch"
+    local repo_name="openclaw-openclaw-model-balancer"
     
     print_info "检查GitHub仓库是否存在..."
     
@@ -193,7 +193,7 @@ create_github_release() {
 # 函数：创建ZIP包
 create_zip_package() {
     local version="v3.0.0"
-    local zip_file="openclaw-model-auto-switch-$version.zip"
+    local zip_file="openclaw-openclaw-model-balancer-$version.zip"
     
     print_info "创建ZIP包: $zip_file"
     
@@ -220,7 +220,7 @@ create_zip_package() {
 # 函数：上传Release资产
 upload_release_assets() {
     local version="v3.0.0"
-    local zip_file="openclaw-model-auto-switch-$version.zip"
+    local zip_file="openclaw-openclaw-model-balancer-$version.zip"
     
     if [ ! -f "$zip_file" ]; then
         print_warning "ZIP包不存在，跳过上传"
@@ -243,7 +243,7 @@ upload_release_assets() {
 
 # 函数：显示发布总结
 show_release_summary() {
-    local repo_name="openclaw-model-auto-switch"
+    local repo_name="openclaw-openclaw-model-balancer"
     local version="v3.0.0"
     
     echo ""

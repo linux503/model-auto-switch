@@ -1,4 +1,4 @@
-# Release v3.1.0 - AI 优化的自动切换模型技能
+# Release v3.1.0 - OpenClaw Model Balancer
 
 ## 🎉 版本信息
 - **版本号**: v3.1.0
@@ -83,8 +83,8 @@
 ### 快速开始
 ```bash
 # 克隆仓库
-git clone https://github.com/YOUR_USERNAME/model-auto-switch.git
-cd model-auto-switch
+git clone https://github.com/YOUR_USERNAME/openclaw-model-balancer.git
+cd openclaw-model-balancer
 
 # 安装依赖
 cd admin
@@ -118,7 +118,7 @@ curl http://localhost:8191/api/ai-optimization/config
 ### 命令行使用
 ```bash
 # 直接运行 AI 优化器
-cd /path/to/model-auto-switch
+cd /path/to/openclaw-model-balancer
 python3 scripts/model_ai_optimizer.py
 
 # 测试所有模型
@@ -131,7 +131,7 @@ python3 quick_model_test.py
 ## 🗂️ 文件结构
 
 ```
-model-auto-switch/
+openclaw-model-balancer/
 ├── scripts/
 │   ├── model_ai_optimizer.py      # AI 优化算法核心
 │   ├── model_manager_enhanced.py  # 增强的模型管理器
@@ -183,10 +183,10 @@ model-auto-switch/
 ### 从 v3.0.0 升级
 ```bash
 # 1. 备份当前配置
-cp -r /path/to/model-auto-switch/config /path/to/backup/
+cp -r /path/to/openclaw-model-balancer/config /path/to/backup/
 
 # 2. 拉取新版本
-cd /path/to/model-auto-switch
+cd /path/to/openclaw-model-balancer
 git fetch origin
 git checkout v3.1.0
 
@@ -286,18 +286,18 @@ cp -r /path/to/backup/config/* config/
 
 **🎉 v3.1.0 版本已准备就绪，开始享受智能的模型管理体验吧！**
 
-**下载链接**: [model-auto-switch-v3.1.0.zip](https://github.com/YOUR_USERNAME/model-auto-switch/releases/download/v3.1.0/model-auto-switch-v3.1.0.zip)
+**下载链接**: [openclaw-model-balancer-v3.1.0.zip](https://github.com/YOUR_USERNAME/openclaw-model-balancer/releases/download/v3.1.0/openclaw-model-balancer-v3.1.0.zip)
 
 **SHA256 校验和**: `待生成`
 
 **安装命令**: 
 ```bash
 # 使用 curl 下载
-curl -L -o model-auto-switch-v3.1.0.zip https://github.com/YOUR_USERNAME/model-auto-switch/releases/download/v3.1.0/model-auto-switch-v3.1.0.zip
+curl -L -o openclaw-model-balancer-v3.1.0.zip https://github.com/YOUR_USERNAME/openclaw-model-balancer/releases/download/v3.1.0/openclaw-model-balancer-v3.1.0.zip
 
 # 解压并安装
-unzip model-auto-switch-v3.1.0.zip
-cd model-auto-switch
+unzip openclaw-model-balancer-v3.1.0.zip
+cd openclaw-model-balancer
 ./admin/start.sh
 ```
 

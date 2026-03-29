@@ -101,7 +101,7 @@ else
     VERSION="v3.1.0"
 fi
 
-COMMIT_MESSAGE="🚀 $VERSION - AI 优化的自动切换模型技能
+COMMIT_MESSAGE="🚀 $VERSION - OpenClaw Model Balancer
 
 主要更新:
 - 🧠 新增 AI 智能优化算法 (多维度评分 + 时间敏感切换)
@@ -185,7 +185,7 @@ git push origin --tags
 echo "📋 生成发布说明..."
 echo "------------------------------------------"
 
-RELEASE_NOTES="## $VERSION - AI 优化的自动切换模型技能
+RELEASE_NOTES="## $VERSION - OpenClaw Model Balancer
 
 ### 🎉 新特性
 
@@ -248,7 +248,7 @@ RELEASE_NOTES="## $VERSION - AI 优化的自动切换模型技能
 ```bash
 # 克隆仓库
 git clone <repository-url>
-cd model-auto-switch
+cd openclaw-model-balancer
 
 # 启动管理后台
 cd admin
@@ -280,7 +280,7 @@ curl -X POST http://localhost:8191/api/ai-optimization/run \
 ### 📋 文件结构
 
 ```
-model-auto-switch/
+openclaw-model-balancer/
 ├── scripts/
 │   ├── model_ai_optimizer.py      # AI 优化算法核心
 │   └── model_manager_enhanced.py  # 增强的模型管理器
@@ -308,7 +308,7 @@ model-auto-switch/
 
 ---
 
-**AI 优化的自动切换模型技能已准备就绪，开始享受智能的模型管理体验吧！** 🚀"
+**OpenClaw Model Balancer已准备就绪，开始享受智能的模型管理体验吧！** 🚀"
 
 # 保存发布说明到文件
 echo "$RELEASE_NOTES" > "RELEASE_${VERSION}.md"

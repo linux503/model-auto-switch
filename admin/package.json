@@ -1,7 +1,7 @@
 {
-  "name": "model-auto-switch-admin",
+  "name": "openclaw-model-balancer-admin",
   "version": "1.0.0",
-  "description": "OpenClaw Model Auto-Switch Admin Dashboard",
+  "description": "OpenClaw Model Balancer - Intelligent AI Model Load Balancing",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

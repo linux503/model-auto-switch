@@ -102,7 +102,7 @@
 ### 发布命令
 ```bash
 # 进入项目目录
-cd /Users/a404/.openclaw/workspace/skills/model-auto-switch
+cd /Users/a404/.openclaw/workspace/skills/openclaw-model-balancer
 
 # 运行发布脚本
 ./publish_to_github.sh
@@ -116,7 +116,7 @@ cd /Users/a404/.openclaw/workspace/skills/model-auto-switch
 gh auth login
 
 # 2. 创建仓库
-gh repo create openclaw-model-auto-switch --public --push --source=.
+gh repo create openclaw-openclaw-model-balancer --public --push --source=.
 
 # 3. 创建标签
 git tag -a v3.0.0 -m "v3.0.0"
@@ -179,7 +179,7 @@ gh release create v3.0.0 --title "v3.0.0" --notes-file GITHUB_RELEASE_SUMMARY.md
 cd admin && tail -f server.log
 
 # 查看系统日志
-tail -f /var/log/syslog | grep model-auto-switch
+tail -f /var/log/syslog | grep openclaw-model-balancer
 ```
 
 ### 备份和恢复
@@ -227,7 +227,7 @@ curl http://localhost:8191/api/backup/list
 
 ## 📞 联系方式
 
-- **项目地址**: https://github.com/yourusername/openclaw-model-auto-switch
+- **项目地址**: https://github.com/yourusername/openclaw-openclaw-model-balancer
 - **OpenClaw社区**: https://discord.gg/clawd
 - **官方文档**: https://docs.openclaw.ai
 - **问题反馈**: GitHub Issues

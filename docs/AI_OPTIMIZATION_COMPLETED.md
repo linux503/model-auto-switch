@@ -116,7 +116,7 @@
 
 ### 文件结构
 ```
-skills/model-auto-switch/
+skills/openclaw-model-balancer/
 ├── scripts/
 │   └── model_ai_optimizer.py      # AI 优化算法核心
 ├── admin/
@@ -133,7 +133,7 @@ skills/model-auto-switch/
 
 ### 1. 启动 AI 优化系统
 ```bash
-cd /Users/a404/.openclaw/workspace/skills/model-auto-switch/admin
+cd /Users/a404/.openclaw/workspace/skills/openclaw-model-balancer/admin
 ./start.sh
 ```
 
@@ -155,7 +155,7 @@ curl -X POST http://localhost:8191/api/ai-optimization/run \
 
 ### 4. 命令行使用
 ```bash
-cd /Users/a404/.openclaw/workspace/skills/model-auto-switch
+cd /Users/a404/.openclaw/workspace/skills/openclaw-model-balancer
 python3 scripts/model_ai_optimizer.py
 ```
 

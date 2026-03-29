@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# model-auto-switch 技能启动脚本
+# openclaw-model-balancer 技能启动脚本
 # 一键启动所有服务
 
 set -e
 
-echo "🚀 启动 model-auto-switch 技能..."
+echo "🚀 启动 openclaw-model-balancer 技能..."
 
 # 颜色定义
 RED='\033[0;31m'
@@ -141,7 +141,7 @@ start_api_server() {
 show_service_info() {
     echo ""
     echo "=========================================="
-    echo "        model-auto-switch 服务信息        "
+    echo "        openclaw-model-balancer 服务信息        "
     echo "=========================================="
     echo ""
     
@@ -231,7 +231,7 @@ cleanup() {
 main() {
     echo ""
     echo "=========================================="
-    echo "   model-auto-switch 技能启动脚本 v1.0   "
+    echo "   openclaw-model-balancer 技能启动脚本 v1.0   "
     echo "=========================================="
     echo ""
     

@@ -49,10 +49,10 @@ gh auth login
 
 ```bash
 # 进入项目目录
-cd /Users/a404/.openclaw/workspace/skills/model-auto-switch
+cd /Users/a404/.openclaw/workspace/skills/openclaw-model-balancer
 
 # 创建GitHub仓库
-gh repo create openclaw-model-auto-switch \
+gh repo create openclaw-openclaw-model-balancer \
   --public \
   --description "Enterprise-grade AI model auto-switching and management platform for OpenClaw" \
   --homepage "https://openclaw.ai" \
@@ -75,7 +75,7 @@ git add .
 git commit -m "feat: initial release v3.0.0"
 
 # 添加远程仓库
-git remote add origin https://github.com/yourusername/openclaw-model-auto-switch.git
+git remote add origin https://github.com/yourusername/openclaw-openclaw-model-balancer.git
 
 # 推送到GitHub
 git push -u origin main
@@ -101,13 +101,13 @@ gh release create v3.0.0 \
 
 ```bash
 # 创建zip包
-zip -r openclaw-model-auto-switch-v3.0.0.zip . \
+zip -r openclaw-openclaw-model-balancer-v3.0.0.zip . \
   -x "*.git*" \
   -x "admin/node_modules/*" \
   -x "*.DS_Store"
 
 # 添加到Release
-gh release upload v3.0.0 openclaw-model-auto-switch-v3.0.0.zip
+gh release upload v3.0.0 openclaw-openclaw-model-balancer-v3.0.0.zip
 ```
 
 ## 📢 发布后推广
@@ -134,7 +134,7 @@ gh release upload v3.0.0 openclaw-model-auto-switch-v3.0.0.zip
 
 ### GitHub仓库设置
 1. **General**
-   - 仓库名称: `openclaw-model-auto-switch`
+   - 仓库名称: `openclaw-openclaw-model-balancer`
    - 描述: "Enterprise-grade AI model auto-switching and management platform"
    - 主页: `https://openclaw.ai`
    - 主题: `openclaw`, `ai`, `model-management`, `automation`
@@ -183,10 +183,10 @@ jobs:
 在README中添加徽章：
 
 ```markdown
-![GitHub Release](https://img.shields.io/github/v/release/yourusername/openclaw-model-auto-switch)
-![License](https://img.shields.io/github/license/yourusername/openclaw-model-auto-switch)
-![GitHub Issues](https://img.shields.io/github/issues/yourusername/openclaw-model-auto-switch)
-![GitHub Stars](https://img.shields.io/github/stars/yourusername/openclaw-model-auto-switch)
+![GitHub Release](https://img.shields.io/github/v/release/yourusername/openclaw-openclaw-model-balancer)
+![License](https://img.shields.io/github/license/yourusername/openclaw-openclaw-model-balancer)
+![GitHub Issues](https://img.shields.io/github/issues/yourusername/openclaw-openclaw-model-balancer)
+![GitHub Stars](https://img.shields.io/github/stars/yourusername/openclaw-openclaw-model-balancer)
 ```
 
 ## 📝 发布说明模板
@@ -234,7 +234,7 @@ jobs:
 
 ### 一键安装
 ```bash
-curl -sSL https://raw.githubusercontent.com/yourusername/openclaw-model-auto-switch/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/yourusername/openclaw-openclaw-model-balancer/main/install.sh | bash
 ```
 
 ### 启动服务
@@ -247,10 +247,10 @@ http://localhost:8191/admin
 
 ## 🔗 相关链接
 
-- 📚 文档: https://github.com/yourusername/openclaw-model-auto-switch
-- 🐛 问题: https://github.com/yourusername/openclaw-model-auto-switch/issues
-- 💬 讨论: https://github.com/yourusername/openclaw-model-auto-switch/discussions
-- ⭐ Star: https://github.com/yourusername/openclaw-model-auto-switch/stargazers
+- 📚 文档: https://github.com/yourusername/openclaw-openclaw-model-balancer
+- 🐛 问题: https://github.com/yourusername/openclaw-openclaw-model-balancer/issues
+- 💬 讨论: https://github.com/yourusername/openclaw-openclaw-model-balancer/discussions
+- ⭐ Star: https://github.com/yourusername/openclaw-openclaw-model-balancer/stargazers
 
 ## 🙏 致谢
 

@@ -1,4 +1,4 @@
-# 🎉 AI 优化的自动切换模型技能 - 最终发布总结
+# 🎉 OpenClaw Model Balancer - 最终发布总结
 
 ## 📅 发布时间
 2026-03-30 01:15 (GMT+8)
@@ -195,7 +195,7 @@
 
 ## 🎉 最终结论
 
-**AI 优化的自动切换模型技能 v3.1.0 已准备就绪！**
+**OpenClaw Model Balancer v3.1.0 已准备就绪！**
 
 ### 发布就绪状态
 - ✅ **功能完整性**: 100%
@@ -215,7 +215,7 @@
 
 ```bash
 # 运行发布脚本查看详细步骤
-cd /Users/a404/.openclaw/workspace/skills/model-auto-switch
+cd /Users/a404/.openclaw/workspace/skills/openclaw-model-balancer
 ./final_publish.sh
 ```
 

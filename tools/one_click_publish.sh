@@ -4,7 +4,7 @@
 set -e
 
 echo "=========================================="
-echo "🚀 AI 优化的自动切换模型技能 - 一键发布"
+echo "🚀 OpenClaw Model Balancer - 一键发布"
 echo "=========================================="
 echo ""
 
@@ -58,8 +58,8 @@ echo "第2步: 📦 创建 GitHub 仓库"
 echo "------------------------------------------"
 echo "1. 访问: https://github.com/new"
 echo "2. 填写仓库信息:"
-echo "   - Repository name: model-auto-switch"
-echo "   - Description: AI 优化的自动切换模型技能"
+echo "   - Repository name: openclaw-model-balancer"
+echo "   - Description: OpenClaw Model Balancer"
 echo "   - 不要勾选 'Initialize this repository with a README'"
 echo "3. 点击 'Create repository'"
 echo "4. 复制生成的仓库 URL (HTTPS 格式)"
@@ -74,7 +74,7 @@ read -r github_username
 
 echo ""
 echo "将执行以下命令:"
-echo "  git remote add origin https://github.com/${github_username}/model-auto-switch.git"
+echo "  git remote add origin https://github.com/${github_username}/openclaw-model-balancer.git"
 echo ""
 read -p "是否继续? (y/n): " -n 1 -r
 echo
@@ -85,9 +85,9 @@ fi
 
 # 执行配置
 echo "⚙️  配置远程仓库..."
-git remote add origin "https://github.com/${github_username}/model-auto-switch.git" 2>/dev/null || {
+git remote add origin "https://github.com/${github_username}/openclaw-model-balancer.git" 2>/dev/null || {
     echo "⚠️  远程仓库已存在，更新配置..."
-    git remote set-url origin "https://github.com/${github_username}/model-auto-switch.git"
+    git remote set-url origin "https://github.com/${github_username}/openclaw-model-balancer.git"
 }
 echo "✅ 远程仓库配置完成"
 
@@ -134,9 +134,9 @@ fi
 echo ""
 echo "第5步: 🎉 创建 GitHub Release"
 echo "------------------------------------------"
-echo "1. 访问: https://github.com/${github_username}/model-auto-switch/releases/new"
+echo "1. 访问: https://github.com/${github_username}/openclaw-model-balancer/releases/new"
 echo "2. 选择标签: v3.1.0"
-echo "3. 标题: v3.1.0 - AI 优化的自动切换模型技能"
+echo "3. 标题: v3.1.0 - OpenClaw Model Balancer"
 echo "4. 描述: 复制以下文件内容:"
 echo "   cat RELEASE_v3.1.0.md | pbcopy"
 echo "5. 点击 'Publish release'"
@@ -156,8 +156,8 @@ echo "  ✅ 远程仓库已配置"
 echo "  🔄 需要手动完成 GitHub 操作"
 echo ""
 echo "🔗 重要链接:"
-echo "  GitHub 仓库: https://github.com/${github_username}/model-auto-switch"
-echo "  创建 Release: https://github.com/${github_username}/model-auto-switch/releases/new"
+echo "  GitHub 仓库: https://github.com/${github_username}/openclaw-model-balancer"
+echo "  创建 Release: https://github.com/${github_username}/openclaw-model-balancer/releases/new"
 echo "  项目主页: http://localhost:8191/admin (本地)"
 echo ""
 echo "📞 如需帮助:"
@@ -172,5 +172,5 @@ echo "=========================================="
 read -p "是否打开 GitHub 仓库页面? (y/n): " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-    open "https://github.com/${github_username}/model-auto-switch"
+    open "https://github.com/${github_username}/openclaw-model-balancer"
 fi

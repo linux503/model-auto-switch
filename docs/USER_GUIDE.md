@@ -1,10 +1,10 @@
-# model-auto-switch 用户指南
+# openclaw-model-balancer 用户指南
 
 ## 🚀 快速开始
 
 ### 1. 启动服务
 ```bash
-cd /Users/a404/.openclaw/workspace/skills/model-auto-switch
+cd /Users/a404/.openclaw/workspace/skills/openclaw-model-balancer
 ./start_all.sh
 ```
 
@@ -310,7 +310,7 @@ curl -X POST http://localhost:8191/api/settings \
 
 ### 第一步：启动服务
 ```bash
-cd /Users/a404/.openclaw/workspace/skills/model-auto-switch
+cd /Users/a404/.openclaw/workspace/skills/openclaw-model-balancer
 ./start_all.sh
 ```
 

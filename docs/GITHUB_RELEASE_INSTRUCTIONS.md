@@ -1,4 +1,4 @@
-# GitHub 发布指南 - AI 优化的自动切换模型技能
+# GitHub 发布指南 - OpenClaw Model Balancer
 
 ## 📋 发布准备已完成
 
@@ -22,8 +22,8 @@
 
 1. **访问 GitHub**: https://github.com/new
 2. **填写仓库信息**:
-   - **Repository name**: `model-auto-switch`
-   - **Description**: `AI 优化的自动切换模型技能 - 智能故障转移和性能优化平台`
+   - **Repository name**: `openclaw-model-balancer`
+   - **Description**: `OpenClaw Model Balancer - 智能故障转移和性能优化平台`
    - **Visibility**: `Public` (或 `Private` 根据需求)
    - **Initialize this repository with**: 不勾选任何选项 (因为本地已有文件)
 3. **点击 "Create repository"**
@@ -32,10 +32,10 @@
 
 ```bash
 # 进入项目目录
-cd /Users/a404/.openclaw/workspace/skills/model-auto-switch
+cd /Users/a404/.openclaw/workspace/skills/openclaw-model-balancer
 
 # 添加远程仓库 (替换 YOUR_USERNAME 为你的 GitHub 用户名)
-git remote add origin https://github.com/YOUR_USERNAME/model-auto-switch.git
+git remote add origin https://github.com/YOUR_USERNAME/openclaw-model-balancer.git
 
 # 验证远程仓库
 git remote -v
@@ -53,22 +53,22 @@ git push origin --tags
 
 ### 步骤 4: 创建 GitHub Release
 
-1. **访问仓库页面**: https://github.com/YOUR_USERNAME/model-auto-switch
-2. **点击 "Create a new release"** (或访问 https://github.com/YOUR_USERNAME/model-auto-switch/releases/new)
+1. **访问仓库页面**: https://github.com/YOUR_USERNAME/openclaw-model-balancer
+2. **点击 "Create a new release"** (或访问 https://github.com/YOUR_USERNAME/openclaw-model-balancer/releases/new)
 3. **填写发布信息**:
    - **Tag version**: `v3.1.0` (选择已存在的标签)
-   - **Release title**: `v3.1.0 - AI 优化的自动切换模型技能`
+   - **Release title**: `v3.1.0 - OpenClaw Model Balancer`
    - **Description**: 复制 `RELEASE_v3.1.0.md` 的内容
 4. **上传发布文件** (可选):
-   - 可以上传压缩包: `model-auto-switch-v3.1.0.zip`
+   - 可以上传压缩包: `openclaw-model-balancer-v3.1.0.zip`
 5. **点击 "Publish release"**
 
 ## 📦 可选: 创建发布包
 
 ```bash
 # 创建发布压缩包
-cd /Users/a404/.openclaw/workspace/skills/model-auto-switch
-zip -r model-auto-switch-v3.1.0.zip . \
+cd /Users/a404/.openclaw/workspace/skills/openclaw-model-balancer
+zip -r openclaw-model-balancer-v3.1.0.zip . \
   -x "*.git*" \
   -x "*node_modules*" \
   -x "*__pycache__*" \
@@ -78,10 +78,10 @@ zip -r model-auto-switch-v3.1.0.zip . \
   -x "._*"
 
 # 生成 SHA256 校验和
-shasum -a 256 model-auto-switch-v3.1.0.zip > model-auto-switch-v3.1.0.zip.sha256
+shasum -a 256 openclaw-model-balancer-v3.1.0.zip > openclaw-model-balancer-v3.1.0.zip.sha256
 
 # 显示校验和
-cat model-auto-switch-v3.1.0.zip.sha256
+cat openclaw-model-balancer-v3.1.0.zip.sha256
 ```
 
 ## 🔒 安全注意事项
@@ -124,7 +124,7 @@ cat .gitignore | grep -E "(env|secret|key|password|token)"
 ## 🎯 发布验证
 
 ### 验证步骤
-1. **仓库访问**: 确认 https://github.com/YOUR_USERNAME/model-auto-switch 可访问
+1. **仓库访问**: 确认 https://github.com/YOUR_USERNAME/openclaw-model-balancer 可访问
 2. **代码浏览**: 确认所有文件正确显示
 3. **Release 页面**: 确认 Release v3.1.0 已发布
 4. **下载测试**: 测试下载链接是否正常
@@ -132,7 +132,7 @@ cat .gitignore | grep -E "(env|secret|key|password|token)"
 ### 功能验证
 ```bash
 # 克隆测试
-git clone https://github.com/YOUR_USERNAME/model-auto-switch.git test-release
+git clone https://github.com/YOUR_USERNAME/openclaw-model-balancer.git test-release
 cd test-release
 
 # 检查文件完整性
@@ -203,10 +203,10 @@ git push origin main
 ## 📞 支持资源
 
 ### 文档链接
-- **项目主页**: https://github.com/YOUR_USERNAME/model-auto-switch
-- **用户指南**: https://github.com/YOUR_USERNAME/model-auto-switch/blob/main/USER_GUIDE.md
+- **项目主页**: https://github.com/YOUR_USERNAME/openclaw-model-balancer
+- **用户指南**: https://github.com/YOUR_USERNAME/openclaw-model-balancer/blob/main/USER_GUIDE.md
 - **API 文档**: 访问本地 http://localhost:8191/api
-- **技能文档**: https://github.com/YOUR_USERNAME/model-auto-switch/blob/main/SKILL.md
+- **技能文档**: https://github.com/YOUR_USERNAME/openclaw-model-balancer/blob/main/SKILL.md
 
 ### 社区支持
 - **GitHub Issues**: 报告问题和功能请求

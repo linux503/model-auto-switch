@@ -42,8 +42,8 @@ Password: [你的 GitHub 密码]
 登录后，**点击这个链接** → [https://github.com/new](https://github.com/new)
 
 填写：
-- **Repository name**: `model-auto-switch`
-- **Description**: `AI 优化的自动切换模型技能`
+- **Repository name**: `openclaw-model-balancer`
+- **Description**: `OpenClaw Model Balancer`
 - **Public** 或 **Private**（根据需求选择）
 - **不要勾选** "Initialize this repository with a README"
 
@@ -54,10 +54,10 @@ Password: [你的 GitHub 密码]
 **复制这个命令**，在终端中执行：
 
 ```bash
-cd /Users/a404/.openclaw/workspace/skills/model-auto-switch
+cd /Users/a404/.openclaw/workspace/skills/openclaw-model-balancer
 
 # 替换 YOUR_USERNAME 为你的 GitHub 用户名
-git remote add origin https://github.com/YOUR_USERNAME/model-auto-switch.git
+git remote add origin https://github.com/YOUR_USERNAME/openclaw-model-balancer.git
 ```
 
 ## 📤 第七步：推送代码
@@ -74,11 +74,11 @@ git push origin --tags
 
 ## 🎉 第八步：创建 Release
 
-**点击这个链接** → [https://github.com/YOUR_USERNAME/model-auto-switch/releases/new](https://github.com/YOUR_USERNAME/model-auto-switch/releases/new)
+**点击这个链接** → [https://github.com/YOUR_USERNAME/openclaw-model-balancer/releases/new](https://github.com/YOUR_USERNAME/openclaw-model-balancer/releases/new)
 
 填写：
 - **Choose a tag**: 选择 `v3.1.0`
-- **Release title**: `v3.1.0 - AI 优化的自动切换模型技能`
+- **Release title**: `v3.1.0 - OpenClaw Model Balancer`
 - **描述**: 复制 `RELEASE_v3.1.0.md` 的内容
 
 点击 **"Publish release"**。

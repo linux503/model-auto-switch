@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# model-auto-switch 技能停止脚本
+# openclaw-model-balancer 技能停止脚本
 
 set -e
 
-echo "🛑 停止 model-auto-switch 技能..."
+echo "🛑 停止 openclaw-model-balancer 技能..."
 
 # 颜色定义
 RED='\033[0;31m'
@@ -209,7 +209,7 @@ show_stop_status() {
 main() {
     echo ""
     echo "=========================================="
-    echo "   model-auto-switch 技能停止脚本 v1.0   "
+    echo "   openclaw-model-balancer 技能停止脚本 v1.0   "
     echo "=========================================="
     echo ""
     

@@ -4,7 +4,7 @@
 2026-03-30 01:06 (GMT+8)
 
 ## 🎯 测试目标
-验证 AI 优化的自动切换模型技能在本机环境中的完整功能
+验证 OpenClaw Model Balancer在本机环境中的完整功能
 
 ## ✅ 测试结果总结
 
@@ -46,7 +46,7 @@ curl -s -X POST http://localhost:8191/api/ai-optimization/run \
 #### 3.1 直接运行 AI 优化器
 ```bash
 # 测试命令
-cd /Users/a404/.openclaw/workspace/skills/model-auto-switch
+cd /Users/a404/.openclaw/workspace/skills/openclaw-model-balancer
 python3 scripts/model_ai_optimizer.py
 ```
 
@@ -142,7 +142,7 @@ curl -s http://localhost:8191/api/health
 ```json
 {
   "status": "healthy",
-  "service": "model-auto-switch-admin",
+  "service": "openclaw-model-balancer-admin",
   "version": "1.0.0",
   "timestamp": "2026-03-29T17:06:02.970Z"
 }
@@ -165,7 +165,7 @@ curl -s http://localhost:8191/api/system/info | python3 -m json.tool | head -30
 - **操作系统**: macOS (Darwin 24.6.0)
 - **Node.js 版本**: v25.5.0
 - **Python 版本**: 3.x
-- **工作目录**: `/Users/a404/.openclaw/workspace/skills/model-auto-switch`
+- **工作目录**: `/Users/a404/.openclaw/workspace/skills/openclaw-model-balancer`
 - **服务端口**: 8191
 
 ### 网络配置
@@ -176,7 +176,7 @@ curl -s http://localhost:8191/api/system/info | python3 -m json.tool | head -30
 
 ### 文件结构验证
 ```
-skills/model-auto-switch/
+skills/openclaw-model-balancer/
 ├── scripts/model_ai_optimizer.py          ✅ 存在且可执行
 ├── admin/server.js                        ✅ 包含 AI API 端点
 ├── admin/public/ai_dashboard.html         ✅ 存在且可访问
@@ -263,7 +263,7 @@ print(f"⏱️ 算法执行时间: {(end-start)*1000:.2f}ms")
 ## 🎯 **测试结论**
 
 ### ✅ **测试通过**
-所有核心功能测试通过，AI 优化的自动切换模型技能在本机环境中运行正常。
+所有核心功能测试通过，OpenClaw Model Balancer在本机环境中运行正常。
 
 ### 🚀 **功能完整性**
 1. **AI 算法**: 完整实现多维度、时间敏感的智能评分
@@ -286,7 +286,7 @@ print(f"⏱️ 算法执行时间: {(end-start)*1000:.2f}ms")
 
 ## 🎉 **最终评估**
 
-**AI 优化的自动切换模型技能已成功安装并测试通过！**
+**OpenClaw Model Balancer已成功安装并测试通过！**
 
 ### 评分总结
 | 类别 | 评分 | 状态 |

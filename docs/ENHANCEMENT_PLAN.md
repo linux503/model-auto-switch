@@ -1,4 +1,4 @@
-# model-auto-switch 技能增强计划
+# openclaw-model-balancer 技能增强计划
 
 ## 🎯 基于用户反馈的优化目标
 

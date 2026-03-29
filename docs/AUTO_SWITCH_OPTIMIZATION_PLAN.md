@@ -301,7 +301,7 @@ POST /api/alerts/config          # 告警配置
 git checkout -b feature/auto-switch-optimization
 
 # 设置开发环境
-cd /Users/a404/.openclaw/workspace/skills/model-auto-switch
+cd /Users/a404/.openclaw/workspace/skills/openclaw-model-balancer
 mkdir -p dev && cd dev
 
 # 初始化项目结构

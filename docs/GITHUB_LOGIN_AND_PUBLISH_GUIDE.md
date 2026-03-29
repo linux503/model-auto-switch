@@ -1,7 +1,7 @@
 # 🔐 GitHub 登录和发布完整指南
 
 ## 🎯 目标
-帮助你在 GitHub 上登录、创建仓库并发布 AI 优化的自动切换模型技能
+帮助你在 GitHub 上登录、创建仓库并发布 OpenClaw Model Balancer
 
 ## 📋 准备工作
 
@@ -48,8 +48,8 @@ git config --global credential.helper store
 1. **登录后访问**: https://github.com/new
 2. **填写仓库信息**:
    ```
-   Repository name: model-auto-switch
-   Description: AI 优化的自动切换模型技能 - 智能故障转移和性能优化平台
+   Repository name: openclaw-model-balancer
+   Description: OpenClaw Model Balancer - 智能故障转移和性能优化平台
    Visibility: Public (或 Private)
    ☐ Initialize this repository with a README (不要勾选!)
    ☐ Add .gitignore: None
@@ -62,7 +62,7 @@ git config --global credential.helper store
 
 ```bash
 # 进入项目目录
-cd /Users/a404/.openclaw/workspace/skills/model-auto-switch
+cd /Users/a404/.openclaw/workspace/skills/openclaw-model-balancer
 
 # 查看当前远程仓库配置
 git remote -v
@@ -71,13 +71,13 @@ git remote -v
 git remote remove origin
 
 # 添加新的远程仓库 (替换 YOUR_USERNAME)
-git remote add origin https://github.com/YOUR_USERNAME/model-auto-switch.git
+git remote add origin https://github.com/YOUR_USERNAME/openclaw-model-balancer.git
 
 # 验证配置
 git remote -v
 # 应该显示:
-# origin  https://github.com/YOUR_USERNAME/model-auto-switch.git (fetch)
-# origin  https://github.com/YOUR_USERNAME/model-auto-switch.git (push)
+# origin  https://github.com/YOUR_USERNAME/openclaw-model-balancer.git (fetch)
+# origin  https://github.com/YOUR_USERNAME/openclaw-model-balancer.git (push)
 ```
 
 ### 步骤 4: 推送代码到 GitHub
@@ -98,28 +98,28 @@ git log --oneline -5
 
 ### 步骤 5: 创建 GitHub Release
 
-1. **访问仓库页面**: https://github.com/YOUR_USERNAME/model-auto-switch
+1. **访问仓库页面**: https://github.com/YOUR_USERNAME/openclaw-model-balancer
 2. **点击右侧的 "Create a new release"** 按钮
-3. **或直接访问**: https://github.com/YOUR_USERNAME/model-auto-switch/releases/new
+3. **或直接访问**: https://github.com/YOUR_USERNAME/openclaw-model-balancer/releases/new
 4. **填写发布信息**:
    ```
    Choose a tag: v3.1.0 (选择已存在的标签)
    Target: main (默认)
-   Release title: v3.1.0 - AI 优化的自动切换模型技能
+   Release title: v3.1.0 - OpenClaw Model Balancer
    ```
 5. **描述内容**: 复制 `RELEASE_v3.1.0.md` 的全部内容
 6. **上传发布文件** (可选):
-   - 可以上传 `model-auto-switch-v3.1.0.zip` (如果需要)
+   - 可以上传 `openclaw-model-balancer-v3.1.0.zip` (如果需要)
 7. **点击 "Publish release"**
 
 ### 步骤 6: 验证发布成功
 
-1. **检查仓库页面**: https://github.com/YOUR_USERNAME/model-auto-switch
+1. **检查仓库页面**: https://github.com/YOUR_USERNAME/openclaw-model-balancer
    - ✅ README.md 正确显示
    - ✅ 文件结构完整
    - ✅ 代码可浏览
 
-2. **检查 Release 页面**: https://github.com/YOUR_USERNAME/model-auto-switch/releases
+2. **检查 Release 页面**: https://github.com/YOUR_USERNAME/openclaw-model-balancer/releases
    - ✅ v3.1.0 Release 存在
    - ✅ 发布说明完整
    - ✅ 下载链接有效 (如果上传了文件)
@@ -128,7 +128,7 @@ git log --oneline -5
    ```bash
    # 在新目录测试克隆
    cd /tmp
-   git clone https://github.com/YOUR_USERNAME/model-auto-switch.git test-clone
+   git clone https://github.com/YOUR_USERNAME/openclaw-model-balancer.git test-clone
    cd test-clone
    ls -la
    ```
@@ -186,7 +186,7 @@ git config --global credential.helper store
 
 # 错误: 网络问题
 # 检查网络连接，或使用 SSH 替代 HTTPS
-git remote set-url origin git@github.com:YOUR_USERNAME/model-auto-switch.git
+git remote set-url origin git@github.com:YOUR_USERNAME/openclaw-model-balancer.git
 ```
 
 #### 3. 标签问题
@@ -218,7 +218,7 @@ git push origin --tags
 # 使用 GitHub CLI (gh)
 brew install gh  # macOS
 gh auth login    # 命令行登录
-gh repo create model-auto-switch --public --description "AI 优化的自动切换模型技能"
+gh repo create openclaw-model-balancer --public --description "OpenClaw Model Balancer"
 gh release create v3.1.0 --title "v3.1.0" --notes-file RELEASE_v3.1.0.md
 ```
 
@@ -247,7 +247,7 @@ fi
 
 # 创建仓库
 echo "📦 创建 GitHub 仓库..."
-gh repo create model-auto-switch --public --description "AI 优化的自动切换模型技能" --confirm
+gh repo create openclaw-model-balancer --public --description "OpenClaw Model Balancer" --confirm
 
 # 推送代码
 echo "📤 推送代码..."
@@ -256,7 +256,7 @@ git push origin --tags
 
 # 创建 Release
 echo "🎉 创建 Release..."
-gh release create v3.1.0 --title "v3.1.0 - AI 优化的自动切换模型技能" --notes-file RELEASE_v3.1.0.md
+gh release create v3.1.0 --title "v3.1.0 - OpenClaw Model Balancer" --notes-file RELEASE_v3.1.0.md
 
 echo "✅ 发布完成!"
 ```
@@ -313,7 +313,7 @@ echo "✅ 发布完成!"
 
 ### 发布完成检查清单
 - [ ] GitHub 账号已登录
-- [ ] 仓库已创建 (model-auto-switch)
+- [ ] 仓库已创建 (openclaw-model-balancer)
 - [ ] 远程仓库已配置
 - [ ] 代码已推送到 GitHub
 - [ ] 标签已推送
@@ -321,7 +321,7 @@ echo "✅ 发布完成!"
 - [ ] 发布验证通过
 
 ### 庆祝时刻
-🎊 **恭喜！** 你已经成功将 AI 优化的自动切换模型技能发布到 GitHub！
+🎊 **恭喜！** 你已经成功将 OpenClaw Model Balancer发布到 GitHub！
 
 **项目现在可以:**
 - 🌍 **全球访问**: 任何人都可以查看和使用
